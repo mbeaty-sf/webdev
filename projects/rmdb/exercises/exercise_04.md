@@ -18,19 +18,6 @@ It seems strange to have the [+] appearing in the Watchlist, so a user can... ad
 
 Go ahead and hide the [+] in the Watchlist section.
 
-## Prevent redundant entries
-
-Right now, when you click [+] for the same movie multiple times, it'll add extra redundant entries to the watchlist. Prevent that from happening.
-
-<details><summary>Click here for hints</summary>
-
-You'll need to check if the array of `watchlistMovies` already contains the movie. Some options could include:
-
-- [Array#find](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
-- [Array#includes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
-
-</details>
-
 ## Create another section
 
 Product comes back and says they've published a [Watch Guide] and [Most Popular] page where people can get more info. You're directed to put this section below the All Movies section.
@@ -69,34 +56,22 @@ Compare your work against the solution [here](https://github.com/AndrewSouthpaw/
 
 See if you can have the [+] button display on top of the movie poster, [like this](https://i.imgur.com/w71eFKH.png). How you style it is up to you. You can use [this article](https://css-tricks.com/overriding-default-button-styles/#another-challenge-is-getting-people-to-use-them-correctly) to help you remove the default browser styling of buttons.
 
-### Extensible Filters
+### Prevent redundant entries
 
-The Product team comes back to you and says that they now want the Watchlist to have different filters. They want the user to display a particular decade of movies: 2020s, 2010s, 2000s, etc.
-
-This means you'll be passing a different set of filters into each `MovieListSection`, and their state will be managed differently.
-
-Looks like a job for Lifting State Up and Composition! 🦸‍♀️
-
-Your end code might look something like this:
-
-```js
-<MovieListSection movies={watchlistMovies}>
-  <button onClick={() => filterDecade('2020')}>2020s</button>
-  <button onClick={() => filterDecade('2010')}>2010s</button>
-  <button onClick={() => filterDecade('2000')}>2000s</button>
-  <button onClick={() => filterDecade(null)}>All</button>
-</MovieListSection>
-<MovieListSection movies={allMovies}>
-  <button onClick={() => filterType('series')}>TV series</button>
-  <button onClick={() => filterDecade('movie')}>Movie</button>
-  <button onClick={() => filterDecade(null)}>All</button>
-</MovieListSection>
-```
+Right now, when you click [+] for the same movie multiple times, it'll add extra redundant entries to the watchlist. Prevent that from happening.
 
 <details><summary>Click here for hints</summary>
 
-- Remember that you can pass an arbitrary set of elements in between the opening and closing tags of a React component and it will be passed in as the `children` prop.
-- `MovieListSection` only needs to *render* the `children` and doesn't need to do anything else with it; the children already will be at the level where they can interact with the necessary state
+You'll need to check if the array of `watchlistMovies` already contains the movie. Some options could include:
+
+- [Array#find](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
+- [Array#includes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
 
 </details>
 
+### Add a "watch next" feature
+
+The UX research team comes back and says users want to pick a movie to "watch next", i.e. move to the top of their watchlist.
+
+1. Give all watchlist movies (except for the first one) a button called "Watch next"
+1. When clicked, moves that movie to the top (leftmost) of their watchlist. All other movies should retain their order.
