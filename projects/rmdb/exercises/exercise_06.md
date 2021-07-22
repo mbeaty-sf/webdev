@@ -7,7 +7,7 @@
 
 Feedback from Product says that users want to be able to correct inaccuracies on the site. That seems reasonable to support, considering RMDb leans on user-provided data anyway.
 
-Add an [Edit] button for movies in the "All Movies" section. When the button is clicked, show that movie below in a section below. You'll need to do some prop drilling to give the `MovieThumbnail` an event handler for this new button, and relay all the way back up to the `App` (I went through 5 components?) to manage the state. Phew! It feels like I'm on an oil derrick.
+Add an [Edit] button for movies in the "All Movies" section. When the button is clicked, show that movie below in a section below. You'll need to do some prop drilling to give the `MovieThumbnail` an event handler for this new button, and relay all the way back up to the `App` (I went through 5 components?) to manage the state. Phew! That's a lot of prop drilling! It feels like I'm on an oil derrick.
 
 Encapsulate this in a new component, `MovieEdit`, which shows only when a movie is being edited. It should display a `form` with fields for the movie.
 
