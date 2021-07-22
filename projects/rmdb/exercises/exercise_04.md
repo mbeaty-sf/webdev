@@ -69,6 +69,10 @@ You'll need to check if the array of `watchlistMovies` already contains the movi
 
 </details>
 
+### Allow watchlist movies to be removed
+
+Turns out users can't remove watchlist movies once they've been added! That seems not ideal. Go add that functionality.
+
 ### Add a "watch next" feature
 
 The UX research team comes back and says users want to pick a movie to "watch next", i.e. move to the top of their watchlist.
