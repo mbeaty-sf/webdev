@@ -1,5 +1,5 @@
 <<(basics.md)
-<<(life.md)
+<<(lifecycle.md)
 <<(timers.md)
 <<(mocking.md)
 <<(async.md)

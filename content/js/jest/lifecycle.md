@@ -1,19 +1,5 @@
 ## Jest: Environment & Life Cycle
 
-### Jest Environment
-
-  * Each spec file runs in its **own, isolated environment**
-
-  * `setupFilesAfterEnv`: Setup files run before each test file
-
-```json
-{
-  "jest": {
-    "setupFilesAfterEnv": ["<rootDir>/setupTests.js"]
-  }
-}
-```
-
 ### Life Cycle Callbacks
 
 Each of the following functions takes a callback as an argument:
