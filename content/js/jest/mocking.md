@@ -11,6 +11,11 @@ import { somethingComplicated } from './dependency'
 export const weirdMath = (a, b) => (
   somethingComplicated() ? a + b : a - b
 )
+
+// dependency.js
+export const somethingComplicated = () => (
+  Math.random() < 0.5 ? true : false
+)
 ```
 
 ### Mocking Modules (Basic)
@@ -25,6 +30,9 @@ This turns all exports into `jest.fn()`
 
 ### Mocking Modules (Basic)
 
+You can even refer to it directly and it'll still 
+be the mocked version!
+
 ```javascript
 // add.spec.js
 import { weirdMath } from '../add'
@@ -37,18 +45,9 @@ somethingComplicated() // undefined
 
 ### Mocking Modules (Basic)
 
-Provide mock values for the exports:
+So you can then control the dependency:
 
 ```javascript
-foo.mockReturnValue(42)
-foo.mockReturnValueOnce(42)
-foo.mockImplementation(() => 42)
-```
-
-### Mocking Modules (Basic)
-
-```javascript
-// add.spec.js
 import { weirdMath } from '../add'
 import { somethingComplicated } from '../dependency'
 
@@ -65,15 +64,17 @@ it('should add or subtract', () => {
 
 ### Mocking Modules (Basic)
 
-`mockImplementation` can provide dynamic behavior based on parameters.
+`jest.mock` applies to _the whole file_
 
 ```javascript
-const foo = jest.fn()
-foo.mockImplementation(n => n + 1)
-
-foo(1) // 2
-foo(2) // 3
+describe('this will not do what you think', () => {
+  jest.mock('./do/not/do/this')
+  it(/* ... */)
+})
 ```
+
+There are many creative ways around this limitation
+but we'll leave it at this for now.
 
 ### Mocking Modules (Inline)
 
@@ -147,7 +148,7 @@ const add = (a, b) => {
 
 ### Mocking Within a Module
 
-Short answer: you can, **but don't**. It's a path of sadness.
+Short answer: just don't. It's a path of sadness.
 
 If you really need to mock the behavior, pull it into a separate file.
 
@@ -156,6 +157,15 @@ If you really need to mock the behavior, pull it into a separate file.
 You can bypass a module mock with `jest.requireActual('./path')`.
 
 Handy application: partially mocking a module.
+
+Take the actual module and spread it out as part of a mock
+
+```javascript
+jest.mock('./dependency', () => ({
+  ...actualDependency,
+  mockFn: jest.fn()
+}))
+```
 
 ### Partially Mocking
 

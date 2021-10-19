@@ -1,4 +1,7 @@
+import { weirdMath } from './mock-fn'
+
 const { compose, map, prop } = require('ramda')
+const { doSomething } = require('./mock-fn')
 
 // <<: dynamic-imp
 const getUserNames = (ids, lookupUser) => (
@@ -144,4 +147,17 @@ describe('with spies', () => {
   it('see here', () => {
     expect(obj.isTrue()).toEqual(true)
   })
+})
+
+import { somethingComplicated } from './mock-fn-dep'
+
+jest.mock('./mock-fn-dep')
+
+it('mocks dependencies', () => {
+  somethingComplicated.mockReturnValueOnce(true)
+  expect(weirdMath(4, 2)).toEqual(6)
+})
+it('so you have control', () => {
+  somethingComplicated.mockReturnValueOnce(false)
+  expect(weirdMath(4, 2)).toEqual(2)
 })

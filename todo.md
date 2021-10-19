@@ -1,4 +1,8 @@
 
+# gather
+
+- [ ] how to rewrite a complicated function and make it easier to test
+
 # javascript intermediate
 
 - [ ] add test commands to the spec/exercise files.
