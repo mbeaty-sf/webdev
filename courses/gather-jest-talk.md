@@ -27,5 +27,5 @@ copyright: >
 <<(../content/js/jest/basics.md)
 <<(../content/js/jest/lifecycle.md)
 <<(../content/js/jest/mocks-basics.md)
-<<(../content/js/jest/mocking.md)
-<<(../content/js/jest/async.md)
+<<(../content/js/jest/mocking-modules1.md)
+<<(../content/js/jest/async-basics.md)

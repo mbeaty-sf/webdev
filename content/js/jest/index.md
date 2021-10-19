@@ -1,7 +1,7 @@
 <<(basics.md)
 <<(lifecycle.md)
 <<(timers.md)
-<<(mocking.md)
+<<(mocking-modules.md)
 <<(async.md)
 
 <div class="notes">TODO add beforeEach exercise</div>

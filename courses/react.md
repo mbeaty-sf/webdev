@@ -99,7 +99,7 @@ Day 3
 
 <<(../content/js/jest/basics.md)
 <<(../content/js/jest/async.md)
-<<(../content/js/jest/mocking.md)
+<<(../content/js/jest/mocking-modules.md)
 <<(../content/js/react/rtl.md)
 
 # React Context
