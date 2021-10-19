@@ -2,6 +2,7 @@
 # gather
 
 - [ ] how to rewrite a complicated function and make it easier to test
+- [x] setup with VS Code or Webstorm
 
 # javascript intermediate
 

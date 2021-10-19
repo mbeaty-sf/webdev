@@ -26,6 +26,7 @@ copyright: >
 <<(../content/js/jest/benefits.md)
 <<(../content/js/jest/basics.md)
 <<(../content/js/jest/lifecycle.md)
+<<(../content/js/jest/ide-setup.md)
 <<(../content/js/jest/mocks-basics.md)
 <<(../content/js/jest/mocking-modules1.md)
 <<(../content/js/jest/async-basics.md)
