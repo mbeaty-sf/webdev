@@ -23,6 +23,7 @@ copyright: >
 
 # Testing
 
+<<(../content/js/jest/benefits.md)
 <<(../content/js/jest/basics.md)
 <<(../content/js/jest/lifecycle.md)
 <<(../content/js/jest/mocks-basics.md)
