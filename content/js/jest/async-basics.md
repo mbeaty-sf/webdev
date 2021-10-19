@@ -32,3 +32,35 @@ it('does something else on error', async () => {
   // assert behavior
 })
 ```
+
+### Network calls
+
+So, given what we know, how could we mock server calls
+using `axios`?
+
+### Network calls
+
+```javascript
+import axios from 'axios'
+
+jest.mock('axios')
+it('mocks network calls', async () => {
+  const getUserName = async (id) => {
+    const { data } = await axios.get(`/users/${id}`)
+    return data.name
+  }
+
+  axios.get
+    .mockResolvedValueOnce({ data: { name: 'Andrew' } })
+  const name = await getUserName(1)
+  expect(name).toEqual('Andrew')
+})
+```
+
+### Async + Fake Timers
+
+You can control timers (`setTimeout`, etc.) in Jest.
+
+However, it has weird interactions with `async` / `await` logic.
+
+For now, just avoid testing stuff that involves timers.

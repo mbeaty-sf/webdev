@@ -114,9 +114,24 @@ it('mocks time', () => {
     .mockReturnValueOnce(mockTime.getTime())
 
   expect(currentTime().toString()).toMatch(
-    'Mon Oct 18 2021 14:45:00 GMT-0700'
+    'Mon Oct 18 2021 14:45:00 GMT-0700',
   )
   Date.now.mockRestore()
+})
+
+import axios from 'axios'
+
+jest.mock('axios')
+it('mocks network calls', async () => {
+  const getUserName = async (id) => {
+    const { data } = await axios.get(`/users/${id}`)
+    return data.name
+  }
+
+  axios.get
+    .mockResolvedValueOnce({ data: { name: 'Andrew' } })
+  const name = await getUserName(1)
+  expect(name).toEqual('Andrew')
 })
 
 describe('with mocks', () => {
@@ -126,6 +141,7 @@ describe('with mocks', () => {
 
   const mock = jest.fn()
   it('will persist state', () => {
+    mock.mock
     mock.mockReturnValue(true)
     expect(mock()).toEqual(true)
   })
