@@ -26,9 +26,10 @@ mock() // 'yay'
 ### Different return values
 
 `mockReturnValue`:
-: A value to return by default
+  : A value to return by default
+
 `mockReturnValueOnce`:
-: A value to be returned only once on a call
+  : A value to be returned only once on a call
 
 These stack together
 
@@ -51,13 +52,17 @@ it('programs return values', () => {
 You can do this with async values as well (more later):
 
 `mockResolvedValueOnce`:
-: Resolve the value one time
+  : Resolve the value one time
+
 `mockResolvedValue`:
-: Default resolved value
+
+  : Default resolved value
+
 `mockRejectedValueOnce`:
-: Reject the value one time
+  : Reject the value one time
+
 `mockRejectedValue`:
-: Default rejected value
+  : Default rejected value
 
 ```javascript
 it('programs promise returns', async () => {
@@ -72,11 +77,13 @@ it('programs promise returns', async () => {
 Mocks can be useful for tracking calls. This is useful for contract testing.
 
 `.toHaveBeenCalled`:
-: The function was called at all
+  : The function was called at all
+
 `.toHaveBeenCalledWith(...args)`:
-: It was called at least once with args
+  : It was called at least once with args
+
 `.toHaveBeenCalledTimes(num)`
-: The number of times it was called
+  : The number of times it was called
 
 ```javascript
 it('tracks calls', () => {
