@@ -8,6 +8,13 @@ Take some time to think about...
 
 ![](./images/knowledge-sharing.jpg)
 
+### Encourages refactoring
+
+![](./images/dragons.jpg)
+
+"I didn't want to refactor because I wasn't sure if my
+changes would break something."
+
 ### Wrangles complexity
 
 ![](./images/tdd1.jpg)

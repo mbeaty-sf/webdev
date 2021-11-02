@@ -54,6 +54,29 @@ it('should foo', () => {
 })
 ```
 
+### Referring to mocked exports
+
+Do this:
+
+```javascript
+import { foo } from '../dependency'
+jest.mock('../dependency')
+```
+
+Not this:
+
+```javascript
+import { foo } from '../__mocks__/dependency'
+jest.mock('../dependency')
+```
+
+### Why is this module being required?
+
+Use `throw new Error(...)` to trace the imports for
+a file that blows up during test initialization.
+
+(See example with Firebase)
+
 ### Mocking Within a Module
 
 How about mocking other members within the same module?

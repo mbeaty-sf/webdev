@@ -374,3 +374,10 @@ it('see here', () => {
 cd src
 yarn jest adder.spec.js --watch
 ```
+
+### Fancier Mocks
+
+Use `jest-when` to tell mocks to have certain behavior based on the
+parameters when invoked:
+
+

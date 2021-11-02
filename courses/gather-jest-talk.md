@@ -29,4 +29,7 @@ copyright: >
 <<(../content/js/jest/ide-setup.md)
 <<(../content/js/jest/mocks-basics.md)
 <<(../content/js/jest/mocking-modules1.md)
+<<(../content/js/jest/mocking-modules2.md)
 <<(../content/js/jest/async-basics.md)
+<<(../content/js/jest/async.md)
+<<(../content/js/jest/refactor-for-testing.md)

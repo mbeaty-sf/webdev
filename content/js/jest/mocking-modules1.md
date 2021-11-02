@@ -60,6 +60,36 @@ it('should add or subtract', () => {
 })
 ```
 
+### Dealing with TypeScript
+
+You'll get a TS error when trying to interact with an exported
+module that is mocked.
+
+```javascript
+import { somethingComplicated } from '../dependency'
+
+jest.mock('../dependency')
+
+somethingComplicated.mockReturnValueOnce(true)
+// TS2339: Property 'mockResolvedValueOnce' does not exist on type ...
+```
+
+### Dealing with TypeScript
+
+`ts-jest` gives us a utility that magically turns an exported function
+into its mocked version.
+
+```javascript
+import { somethingComplicated } from '../dependency'
+import { mocked } from 'ts-jest/utils'
+
+jest.mock('../dependency')
+
+mocked(somethingComplicated)
+  .mockReturnValueOnce(true) // OK
+  .mockReturnValueOnce(42) // Type error, still checks fn types
+```
+
 ### Mocking Modules (Basic)
 
 `jest.mock` applies to _the whole file_
