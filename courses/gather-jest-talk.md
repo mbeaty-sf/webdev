@@ -32,4 +32,6 @@ copyright: >
 <<(../content/js/jest/mocking-modules2.md)
 <<(../content/js/jest/async-basics.md)
 <<(../content/js/jest/async.md)
+<<(../content/js/jest/react-business-logic.md)
+<<(../content/js/jest/redux.md)
 <<(../content/js/jest/refactor-for-testing.md)

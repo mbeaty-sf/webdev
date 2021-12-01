@@ -275,9 +275,3 @@ it("handles errors when count exceeds 999", () => {
   expect(result.error).toEqual(Error("Counter overflow"));
 });
 ```
-
-### Testing React Effects
-
-What about some component that loads data initially?
-
-TODO talk about JSDOM environment
