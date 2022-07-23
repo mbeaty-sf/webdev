@@ -62,7 +62,8 @@ This JavaScript course is delivered over three days.
 <<(../content/js/functional/basics.md)
 <<(../content/js/functional/data.md)
 <<(../content/js/functional/array.md)
-<<(../content/js/functional/closures.md)
+<<(../content/js/functional/closures-basics.md)
+<<(../content/js/functional/closures-advanced.md)
 <<(../content/js/functional/this.md)
 
 # The Document Object Model
@@ -117,7 +118,10 @@ This JavaScript course is delivered over three days.
 
 # Testing
 
-<<(../content/js/testing.md)
+<<(../content/js/jest/intro.md)
+<<(../content/js/jest/index.md)
+<<(../content/js/jest/jsdom.md)
+<<(../content/js/jest/best-practices.md)
 
 # Debugging
 

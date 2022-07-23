@@ -94,7 +94,8 @@ following:
 
 <<(../content/js/functional/basics.md)
 <<(../content/js/functional/data.md
-<<(../content/js/functional/closures.md)
+<<(../content/js/functional/closures-basics.md)
+<<(../content/js/functional/closures-advanced.md)
 <<(../content/js/functional/array.md)
 <<(../content/js/functional/this.md#call)
 <<(../content/js/functional/this.md#apply)

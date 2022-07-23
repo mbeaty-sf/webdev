@@ -43,7 +43,7 @@ document.addEventListener('click', (e) => {
  *   2. Webstorm
  *
  * Once that's done, set up a breakpoint to investigate the bug, and fix it.
- * Bonus points if you can fit it without changing variable names.
+ * Bonus points if you can fix it without changing variable names.
  */
 
 const exercise3 = () => {

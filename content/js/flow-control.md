@@ -75,6 +75,18 @@ Don't forget that `break;` statement!
     for (let i=0; i<n; ++i) { /* body */ }
     ~~~
 
+  * Iterating across an array:
+
+    ```javascript
+    for (let element of array) { /* ... */ }
+    ```
+
+  * Iterating across object properties:
+
+    ~~~ {.javascript}
+    for (let prop in object) { /* body */ }
+    ~~~
+
   * Traditional `while`:
 
     ~~~ {.javascript}
@@ -85,12 +97,6 @@ Don't forget that `break;` statement!
 
     ~~~ {.javascript}
     do { /* block */ } while (condition)
-    ~~~
-
-  * Object Property Version of `for`:
-
-    ~~~ {.javascript}
-    for (let prop in object) { /* body */ }
     ~~~
 
 ### Traditional for Loops

@@ -8,26 +8,23 @@
   - I find that it's best to approach JavaScript as a functional (yet
     imperative) language with some object-oriented features.
 
-### A Little Bit About JavaScript
+### A Little About JavaScript
 
   - Standardized as ECMAScript
-    - 5th Edition, 2009 (widely supported)
-    - 6th Edition, 2015 (not so much)
-    - 7th Edition, 2016
-    - 8th Edition, 2017
-    - 9th Edition, 2018
+    - 5th Edition, 2009 (ES5)
+    - 6th Edition, 2015 (ES6)
+    - 7th Edition, 2016 (ES7)
+    - ...
+    - 11th Edition, ES2020
+    - 12th Edition, ES2021
+    - ES.Next
 
-  - Special-purpose language
-
-  - Dynamically typed (with weak typing)
-
+  - Creator: Brendan Eich
+  - Mocha -> LiveScript -> JavaScript
+  - Invented in 10 days to power Netscape
+  - Dynamically typed
   - Interpreted and single threaded
-
-  - Prototype-base inheritance (vs. class-based)
-
-  - Nothing really to do with Java
-
-  - Weird but fun
+  - No real relationship to Java
 
 ### Not a General Purpose Language
 
@@ -58,24 +55,12 @@
   - Part of the "C" family of languages
   - Whitespace is insignificant (including indentation)
   - Blocks of code are wrapped with curly braces: `{ ... }`
-  - Expressions are terminated by a semicolon: `;`
-
-<div class="notes">
-
-You might also want to a reference page on [Lexical Structure and Keywords][lsk]
-in JavaScript.
-
-[lsk]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar
-
-</div>
 
 ### A Note About Semicolons
 
   - Semicolons are used to terminate expressions.
   - They are optional in JavaScript.
-  - Due to the minification process and other subtle features of the
-    language, you should always use semicolons.
-  - When in doubt, use a semicolon.
+  - Tools will help guide your use of semicolons.
 
 ### The Browser's JavaScript Console
 
@@ -101,5 +86,3 @@ in JavaScript.
   - Lets you see scoped variables and context
 
   - Can set a conditional breakpoint
-
-  - `console.log` is equivalent to `printf`

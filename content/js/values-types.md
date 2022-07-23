@@ -134,21 +134,28 @@ identifiers.)
 
 ### JavaScript Comments
 
-  - Single-line comments:
+- Single-line comments:
 
-    ~~~ {.javascript}
-    // Starts with two slashes, runs to end of line.
-    ~~~
+  ```javascript
+  // Starts with two slashes, runs to end of line.
+  ```  
 
-  - Multiple-line comments:
+- Multiple-line comments:
 
-    ~~~ {.javascript}
-    /* Begins with a slash and asterisk.
+  ```javascript
+  /**
+   * Pretty common style for block comments.
+   * This is a second line.
+   */
+  ```
 
-    Also a comment.
+- Multiple-line comments (less common):
 
-    Ends with a asterisk slash. */
-    ~~~
+  ```javascript
+  /* Begins with a slash and asterisk.
+  Also a comment.
+  Ends with an asterisk slash. */
+  ```
 
 ### Exercise: Using Primitive Types
 

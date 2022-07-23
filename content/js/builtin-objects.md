@@ -128,13 +128,20 @@
   - Search:  `a.indexOf(x);`
   - Sort:    `a.sort();`
 
-### Array Enumeration
+### Array vs Object Enumeration
 
-**WARNING**: Use `for`, not `for...in`.  The latter doesn't keep array
-keys in order!
+`for...of` is for arrays
 
-~~~ {.javascript}
-for (let i=0; i < myArray.length; ++i) {
-  // myArray[i]
-}
-~~~
+> Show me each bead OF this string of pearls
+
+```javascript
+for (let element of array) { /* ... */ }
+```
+
+`for...in` is for objects
+
+> Show me each word IN this dictionary
+
+```javascript
+for (let property in object) { /* ... */ }
+```

@@ -36,23 +36,23 @@
 
 There are four primary ways to work with object properties:
 
-  #. Dot notation:
+1. Dot notation:
 
-    ~~~ {.javascript}
+    ```javascript
     object.property = "foo";
     let x = object.property;
-    ~~~
+    ```
 
-  #. Square bracket notation:
+2. Square bracket notation:
 
-    ~~~ {.javascript}
+    ```javascript
     object["property"] = "foo";
     let x = object["property"];
-    ~~~
+    ```
 
-  #. Through the `Object.defineProperty` function
+3. Through the `Object.defineProperty` function
 
-  #. Using the `delete` function
+4. Using the `delete` function
 
 ### Property Descriptors
 
@@ -64,7 +64,7 @@ There are four primary ways to work with object properties:
   - Typically, descriptors are hidden, use `defineProperty` to change
     them:
 
-    ~~~ {.javascript}
+    ```javascript
     let obj = {};
 
     Object.defineProperty(obj, "someName", {
@@ -73,7 +73,7 @@ There are four primary ways to work with object properties:
       writable:     false, // No setter for someName
       // ...
     });
-    ~~~
+    ```
 
 <div class="notes">
 

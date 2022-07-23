@@ -20,6 +20,12 @@
 ~~~ {.javascript insert="../../src/examples/js/scopes.js" token="function-scopes"}
 ~~~
 
+### Nested Scopes
+
+![](images/one-way-glass.png)
+
+https://css-tricks.com/javascript-scope-closures/
+
 ### Function Scopes
 
 ~~~ {.javascript insert="../../src/examples/js/scopes.js" token="function-scopes-answer"}
@@ -29,12 +35,6 @@
 
 ~~~ {.javascript insert="../../src/examples/js/scopes.js" token="nested-example"}
 ~~~
-
-### Nested Scopes
-
-![](images/one-way-glass.png)
-
-https://css-tricks.com/javascript-scope-closures/
 
 ### Lexical Scoping
 
