@@ -1,232 +1,157 @@
 ## Objects
 
-### A Collection of Key/Value Pairs ### {#key-value}
+### A Collection of Key/Value Pairs
 
-  - Built up from the core types
+- A dynamic, mutable collection of key value pairs:
 
-  - A dynamic collection of **properties**:
-
-    ~~~ {.javascript}
-    let box = {
-      color: "tan",
-      height: 12
-    };
-
-    box.color;             // Getter method
-    box.color = "red";     // Setter method
-
-    let x = "color";
-    box[x];          // "red"
-    box[x] = "blue"; // Alternative syntax
-    ~~~
-
-### Object Basics
-
-  - Everything is an object (almost)
-
-  - Primitive types have object wrappers (except `null` and `undefined`)
-
-  - They remain primitive until used as objects, for performance reasons
-
-  - An object is a dynamic collection of properties
-
-  - Properties can be functions
-
-### Object Properties
-
-There are four primary ways to work with object properties:
-
-1. Dot notation:
-
-    ```javascript
-    object.property = "foo";
-    let x = object.property;
-    ```
-
-2. Square bracket notation:
-
-    ```javascript
-    object["property"] = "foo";
-    let x = object["property"];
-    ```
-
-3. Through the `Object.defineProperty` function
-
-4. Using the `delete` function
-
-### Property Descriptors
-
-  - Object properties have descriptors that affect their behavior
-
-  - For example, you can control whether or not a property can be
-    deleted or enumerated
-
-  - Typically, descriptors are hidden, use `defineProperty` to change
-    them:
-
-    ```javascript
-    let obj = {};
-
-    Object.defineProperty(obj, "someName", {
-      configurable: false, // someName can't be deleted
-      enumerable:   false, // someName is hidden
-      writable:     false, // No setter for someName
-      // ...
-    });
-    ```
-
-<div class="notes">
-
-For more information on property descriptors,
-[see this MDN article] [mdn-descriptors].
-
-[mdn-descriptors]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
-
-</div>
-
-### Object Reflection
-
-Objects can be inspected with...
-
-  - the `typeof` operator:
-
-    ~~~ {.javascript}
-    typeof obj;
-    ~~~
-
-  - the `in` operator:
-
-    ~~~ {.javascript}
-    "foo" in obj;
-    ~~~
-
-  - the `hasOwnProperty` function:
-
-    ~~~ {.javascript}
-    obj.hasOwnProperty("foo");
-    ~~~
-
-Keep in mind that objects "inherit" properties. Use the `hasOwnProperty`
-to see if an object actually has its own copy of a property.
-
-### The typeof Operator
-
-Sometimes useful for determining the type of a variable:
-
-~~~ {.javascript}
-typeof 42;        // "number"
-typeof NaN;       // "number"
-typeof Math.abs;  // "function"
-typeof [1, 2, 3]; // "object"
-typeof null;      // "object"
-typeof undefined; // "undefined"
-~~~
-
-(But not all that useful in reality.)
-
-<div class="notes">
-
-Instead of doing this:
-
-~~~ {.javascript}
-if (typeof someVal === "undefined") {
-  // ...
+```javascript
+const person = {
+  name: 'Andrew',
+  favoriteFood: 'chocolate',
 }
-~~~
+```
 
-Just do:
+### Getting values
 
-~~~ {.javascript}
-if (someVal === undefined) {
-  // ...
-}
-~~~
+Dot notation:
 
-</div>
+```javascript
+const pet = { name: 'Fido', type: 'dog' }
+
+pet.name // 'Fido'
+```
+
+Accessing a property that isn't on the object returns `undefined`:
+
+```javascript
+pet.propThatDoesNotExist // undefined
+```
+
+Getting a dynamic property based on a variable (square bracket notation):
+
+```javascript
+const propName = 'type'
+
+pet[propName] // 'dog', looking for key "type"
+pet.propName // undefined, looking for key "propName"
+```
+
+### Setting values
+
+Dot notation:
+
+```javascript
+const pet = { /* ... */ }
+
+pet.name = 'Lassie'
+```
+
+Square bracket notation:
+
+```javascript
+const propName = 'type'
+pet[propName] = 'dog'
+```
+
+### Removing properties
+
+With the `delete` keyword:
+
+```javascript
+const pet = { name: 'Fido', type: 'dog' }
+delete pet.name
+pet // { name: 'Fido' }
+```
 
 ### Property Enumeration
 
-  - The `for..in` loop iterates over an object's properties in an
-    **unspecified** order.
+  - The `for...in` loop iterates over an object's properties in an **unspecified** order.
 
-  - Use `object.hasOwnProperty(propertyName)` to test if a property is
-    inherited or local.
-
-~~~ {.javascript}
+```javascript
 for (let propertyName in object) {
-   /*
-      propertyName is a string.
-
-      Must use this syntax:
-      object[propertyName]
-
-      Does not work:
-      object.propertyName
-  */
+  // propertyName is a string
+  object[propertyName] // gets the value
 }
-~~~
+```
 
-### Object Keys
+- Includes _inherited_ properties, use `obj.hasOwnProperty(propName)` to test
 
-  - Get an array of all "own", enumerable properties:
+```javascript
+const obj1 = { color: 'red' }
+const obj2 = Object.create(obj1) // inherit from 
 
-    ~~~ {.javascript}
-    Object.keys(obj);
-    ~~~
+obj2.color // 'red'
+obj2.hasOwnProperty('color') // false
+```
 
-  - Get even non-enumerable properties:
+### Property Enumeration
 
-    ~~~ {.javascript}
-    Object.getOwnPropertyNames(obj);
-    ~~~
+```javascript
+Object.keys(obj) // all the keys of the object
 
-### Object References and Passing Style
+for (let key of Object.keys(obj)) { /* ... */ }
 
-  - Objects can be passed to and from functions
+Object.values(obj) // all the values of the object
 
-  - JavaScript is **call-by-sharing** (very similar to
-    call-by-reference)
+for (let value of Object.values(obj)) { /* ... */ }
 
-  - Watch out for functions that modify your objects!
+Object.entries(obj) // all [key, value] pairs of the object
 
-  - Remember that `===` compares references
+for (let [key, value] of Object.entries(obj)) { /* ... */ }
 
-  - Since `===` only compares references, it only returns `true` if the
-    two operands are the same object in memory
+Object.getOwnPropertyNames(obj) // all properties, incl. non-enumerable
+```
 
-  - There's no built in way in JS to compare objects for similar
-    contents
+### Comparing objects
 
-### JavaScript and Mutability
+- `===` compares references
 
-  - All primitives in JavaScript are immutable
+```js
+const obj1 = {}
+const obj2 = obj1 // same object in memory
+const obj3 = {} // different object in memory
 
-  - Using an assignment operator just creates a new instance of the
-    primitive
+obj1 === obj2 // true
+obj1 === obj3 // false
+```
 
-  - You can think of primitives as using **call-by-value**
+- No way to compare object contents (exactly)
+- Decent workaround, works in 99% of cases:
 
-  - Unless you used an object constructor for a primitive!
+```javascript
+JSON.stringify(obj1) === JSON.stringify(obj2)
+```
 
-  - Objects are mutable (and use **call-by-sharing**)
+### Object methods
 
-  - Their values (properties) can change
+Objects can have functions as properties. We refer to them as "methods".
 
-### Exercise: Create a `copy` Function
+`this` refers to the object itself
 
-  #. Open the following file:
+```javascript
+const person = {
+  name: 'Andrew',
+  sayName() {
+    console.log(this.name)
+    // basically the same as
+    console.log(person.name)
+  }
+}
 
-        src/www/js/copy/copy.js
+person.sayName()
+```
 
-  #. Complete the exercise.
+There's much more detail here to get into later.
 
-  #. Run the tests by opening the `index.html` file in your browser.
+### Exercise
 
-Hints:
+#. Open `src/www/js/objects-basic/objects-basic.js`
 
-  - `for (let prop in someobj) { /* ... */ }`
+#. Follow directions in the code
 
-  - `someobj.hasOwnProperty(prop)`
+#. Run tests with:
 
-
-<<(es-features/es2015.md#o68acf4e36cb11e8a63ff768f96bc38a)
+```shell
+$ cd src # (from root)
+$ npx jest objects-basic.test.js --watch
+```
