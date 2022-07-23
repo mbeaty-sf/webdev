@@ -5,11 +5,12 @@
   - Primitive Values:
 
     ~~~ {.javascript}
-    "Hello World"; // Strings
-    42;            // Numbers
-    true && false; // Boolean
-    null;          // No value
-    undefined;     // Unset
+    "Hello World" // Strings
+    42            // Numbers
+    true          // Boolean
+    false         // Boolean
+    null          // No value
+    undefined     // Unset
     ~~~
 
   - Objects (arrays, functions, etc.)
@@ -62,17 +63,18 @@ identifiers.)
 ### `undefined` and `null`
 
   - There are two special values: `null` and `undefined`
+  - `undefined` means "unset"
+  - `null` means "absent" or "no appropriate value"
+  - Variables without a value when declared are `undefined`
 
-  - Variables declared *without* a value will start with `undefined`
-
-  - Setting a variable to `null` usually indicates "no appropriate value"
+```javascript
+let foo // <- this is the "declaration"
+foo // undefined
+```
 
 ### Numbers
 
-  - All numbers are 64bit floating point
-
-  - Integer and decimal (`9` and `9.8` use the same type)
-
+  - All numbers are 64-bit floating point
   - Keep an eye on [number precision](http://0.30000000000000004.com/):
 
     ~~~ {.javascript}
@@ -86,58 +88,41 @@ identifiers.)
     1 / 0;      // Infinity
     ~~~
 
-### How Do You Deal with Numeric Accuracy?
-
   - Use a special data type like [Big
     Decimal](https://github.com/dtrebbien/BigDecimal.js).
-
-  - Round to a fixed decimal place with `num.toFixed(2);`
-
-  - Only use integers (e.g., for money, represent as cents)
+  - Only use integers, e.g. money in cents
 
 ### Strings
 
-  - Use double or single quotes (no difference between them):
+  - Single quotes (`'Hello'`)) or double quotes (`"Hello"`)
+  - Typical escaped characters works (e.g., `\n` and `\t`)
+  - Concatenate strings:
 
-    ~~~ {.javascript}
-    "Hello" // Same as...
-    'Hello'
-    ~~~
-
-  - Typical backslash characters works (e.g., `\n` and `\t`) in both
-    types of strings.
-
-  - Operators:
-
-    ~~~ {.javascript}
-    "Hello" + " World";  // "Hello World"
-    "Lucky " + 21;       // "Lucky 21"
-    "Lucky " - 21;       // NaN
-    "1" - 1              // 0
-    ~~~
+```javascript
+'Hello' + ' World' // 'Hello World'
+```
 
 ### Value Coercion
 
-  - JavaScript is loosely typed (uni-typed)
+  - JavaScript is weakly typed, can implicitly convert:
+  - Usually unexpected:
 
-  - Implicit conversion between "types" as needed
+```javascript
+8 * null; // 0
 
-  - Usually in unexpected ways:
+null > 0;  // false
+null == 0; // false
+null >= 0; // true
+```
 
-    ~~~ {.javascript}
-    8 * null; // 0
-
-    null > 0;  // false
-    null == 0; // false
-    null >= 0; // true
-    ~~~
+([Link](https://www.destroyallsoftware.com/talks/wat) @ 1:24)
 
 ### JavaScript Comments
 
 - Single-line comments:
 
   ```javascript
-  // Starts with two slashes, runs to end of line.
+  // Starts with two slashes
   ```  
 
 - Multiple-line comments:
@@ -153,11 +138,23 @@ identifiers.)
 
   ```javascript
   /* Begins with a slash and asterisk.
-  Also a comment.
+  Second line.
   Ends with an asterisk slash. */
   ```
 
-### Exercise: Using Primitive Types
+### Exercise
+
+
+#. Open `src/www/js/primitives/primitives.js`
+
+#. Follow directions in the code
+
+#. Run tests with:
+
+```shell
+$ cd src # (from root)
+$ yarn jest primitives.test.js --watch
+```
 
   #. Open the following file:
 
