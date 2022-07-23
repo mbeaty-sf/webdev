@@ -160,6 +160,13 @@ const ಠ_ಠ = 'cool, but do not do this'
 'Hello' + ' World' // 'Hello World'
 ```
 
+- Variable substitution using template strings with backticks:
+
+```javascript
+const name = 'Andrew'
+const greeting = `Hello my name is ${name}`
+```
+
 ### Objects
 
 Dynamic collections of key-value pairs.
