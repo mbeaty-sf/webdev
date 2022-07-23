@@ -1,64 +1,127 @@
 ## Values and Operators
 
+### JavaScript Comments
+
+- Single-line comments:
+
+  ```javascript
+  // Starts with two slashes
+  ```  
+
+- Multiple-line comments:
+
+  ```javascript
+  /**
+   * Pretty common style for block comments.
+   * This is a second line.
+   */
+  ```
+
+- Multiple-line comments (less common):
+
+  ```javascript
+  /* Begins with a slash and asterisk.
+  Second line.
+  Ends with an asterisk slash. */
+  ```
+
 ### Primitive Values vs. Objects
 
-  - Primitive Values:
+- Primitive values
 
-    ~~~ {.javascript}
-    "Hello World" // Strings
-    42            // Numbers
-    true          // Boolean
-    false         // Boolean
-    null          // No value
-    undefined     // Unset
-    ~~~
+```javascript
+"Hello World" // String
+42            // Number
+true          // Boolean
+false         // Boolean
+null          // "No value"
+undefined     // "Unset"
+```
 
-  - Objects (arrays, functions, etc.)
+- Objects
 
-### Variables in JavaScript
+```javascript
+[1, 2, 3]          // array
+{ name: 'Andrew' } // object
+function myFn() {} // function
+```
 
-~~~ {.javascript}
-let x;          // undefined
-let y = "Foo";  // String
-let z = 5;      // Number
-~~~
+(we call these different names, but they're all Object type)
 
-### Declaring and Initializing Variables
+### Variables
 
-  - Declare variables to make them local:
+You **declare** a variable
 
-    ~~~ {.javascript}
-    let x;
-    ~~~
+```javascript
+let x
+```
 
-  - You can initialize them at the same time:
+You can **assign** a value to a variable
 
-    ~~~ {.javascript}
-    let n = 1;
+```javascript
+x = 1
+```
 
-    let x, y=1, z;
-    ~~~
+You can do **both** at the same time:
 
-  - If you don't declare a variable with `var`, the first time you
-    assign to an undefined identifier it will become a global variable.
+```javascript
+let x = 1
+```
 
-  - If you don't assign a value to a new variable it will be `undefined`
+### Variables
 
-### Variable Naming Conventions
+Not assigning a value when declaring gives it `undefined`
 
-  - Use camelCase: `userName`, `partsPerMillion`
+```javascript
+let x
+x // undefined
+```
 
-  - Allowed: letters, numbers, underscore, and `$`
+### Variables: const, let, var
 
-  - Don't use JavaScript keywords as variable names
+Use `const` most of the time. Prevents assignment:
 
-  - Always start with a lowercase letter
+```javascript
+const x = 1
+x = 2 // error
+```
 
-(All identifiers can be made up of valid Unicode characters.  Don't go
-crazy, not all [browsers support this][jsids].  Stick to UTF-8
-identifiers.)
+Use `let` when you must reassign something:
 
-[jsids]: https://mathiasbynens.be/notes/javascript-identifiers-es6
+```javascript
+let result
+result = 'Hello'
+result = 'Goodbye'
+```
+
+Don't use `var` ever, it's an old keyword and causes chaos
+
+```javascript
+var x = 1 // bad times
+```
+
+### Conventions
+
+- Use camel case: `userName`, `favoriteFood`
+- Can start with letters, underscore, or `$`
+
+```javascript
+const _foo
+const $foo
+```
+
+- Can have numbers (but not to start)
+
+```javascript
+const foo1 // yes
+const 1foo // syntax error
+```
+
+- Fun fact: all Unicode characters are accepted ([link](https://mathiasbynens.be/notes/javascript-identifiers-es6)):
+
+```javascript
+const ಠ_ಠ = 'cool, but do not do this'
+```
 
 ### `undefined` and `null`
 
@@ -66,11 +129,6 @@ identifiers.)
   - `undefined` means "unset"
   - `null` means "absent" or "no appropriate value"
   - Variables without a value when declared are `undefined`
-
-```javascript
-let foo // <- this is the "declaration"
-foo // undefined
-```
 
 ### Numbers
 
@@ -102,6 +160,53 @@ foo // undefined
 'Hello' + ' World' // 'Hello World'
 ```
 
+### Objects
+
+Dynamic collections of key-value pairs.
+
+```javascript
+const emptyObj = {}
+const pet = { name: 'Fido' }
+pet.name // 'Fido'
+```
+
+More on this later!
+
+### Arrays
+
+An iterable collection of elements, representing a list.
+
+```javascript
+const emptyArr = []
+const oddNumbers = [1, 3, 5]
+const mixed = [1, true, 'hello']
+```
+
+More on this later!
+
+### Functions
+
+Runs the code inside the block and returns a value.
+
+```javascript
+function sayHello() {
+  console.log("Hello world")
+}
+
+sayHello() // runs the function
+```
+
+Parameters can be passed in order to change behavior.
+
+```javascript
+function add(a, b) {
+  return a + b
+}
+
+add(1, 2) // 3
+add(5, 4) // 9
+```
+
 ### Value Coercion
 
   - JavaScript is weakly typed, can implicitly convert:
@@ -117,33 +222,28 @@ null >= 0; // true
 
 ([Link](https://www.destroyallsoftware.com/talks/wat) @ 1:24)
 
-### JavaScript Comments
+### The typeof Operator
 
-- Single-line comments:
+Sometimes useful for determining a variable's type:
 
-  ```javascript
-  // Starts with two slashes
-  ```  
+~~~ {.javascript}
+typeof "Hello";      // "string"    
+typeof 42;           // "number"
+typeof console.log;  // "function"
+typeof undefined;    // "undefined"
+~~~
 
-- Multiple-line comments:
+But many are not what you would expect:
 
-  ```javascript
-  /**
-   * Pretty common style for block comments.
-   * This is a second line.
-   */
-  ```
+```javascript
+typeof NaN;       // "number"
+typeof [1, 2, 3]; // "object"
+typeof null;      // "object"
+```
 
-- Multiple-line comments (less common):
-
-  ```javascript
-  /* Begins with a slash and asterisk.
-  Second line.
-  Ends with an asterisk slash. */
-  ```
+So use it sparingly.
 
 ### Exercise
-
 
 #. Open `src/www/js/primitives/primitives.js`
 
