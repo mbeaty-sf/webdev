@@ -51,6 +51,7 @@ This JavaScript course is delivered over two days.
 <<(../content/js/basic-arrays.md)
 <<(../content/js/basic-objects.md)
 <<(../content/js/builtin-objects.md)
+<<(../content/js/exceptions.md)
 <<(../content/js/functional/basics.md)
 <<(../content/js/es-features/syntax.md)
 
@@ -66,10 +67,6 @@ This JavaScript course is delivered over two days.
 <<(../content/js/oop/new.md)
 <<(../content/js/functional/this.md)
 <<(../content/js/this.md)
-
-# Exceptions
-
-<<(../content/js/exceptions.md)
 
 # JavaScript and the Web Browser
 
