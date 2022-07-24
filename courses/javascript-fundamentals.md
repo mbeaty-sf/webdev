@@ -53,7 +53,6 @@ This JavaScript course is delivered over two days.
 <<(../content/js/builtin-objects.md)
 <<(../content/js/exceptions.md)
 <<(../content/js/functional/basics.md)
-<<(../content/js/es-features/syntax.md)
 
 # Functions
 

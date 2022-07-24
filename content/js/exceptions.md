@@ -26,10 +26,10 @@ Full list here ([link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/R
 
 ```javascript
 const thisWillErrorWhenRun = () => {
-  asdf // ReferenceError
+  asdf
 }
 
-thisWillErrorWhenRun()
+thisWillErrorWhenRun() // ReferenceError
 
 foo // ReferenceError
 const foo = 1
@@ -44,9 +44,8 @@ const getLength = (input) => {
   return input.length
 }
 
-getLength(undefined) // TypeError
-// TypeError: Cannot read properties 
-// of undefined (reading 'length')
+getLength(undefined) // TypeError: Cannot read properties 
+                     // of undefined (reading 'length')
 ```
 
 ### Error types
@@ -55,13 +54,13 @@ getLength(undefined) // TypeError
 
 ```javascript
 const thisWillErrorImmediately = () => {
-  const 1asdf
+  const 1asdf // SyntaxError
 }
-
-// SyntaxError
 ```
 
 ### `throw` keyword
+
+`throw` halts execution, and immediately walks up the call stack with the error thrown
 
 ```javascript
 const assertLengthGreaterThan4 = (input) => {
@@ -70,6 +69,19 @@ const assertLengthGreaterThan4 = (input) => {
   }
   return true
 }
+```
+
+### `try/catch`
+
+A `catch` block catches a thrown error and stops its propagation.
+
+```javascript
+try {
+  assertLengthGreaterThan4('foo')
+} catch (error) {
+  console.log('The error is handled here')
+}
+// code resumes regular execution here
 ```
 
 ### `throw` keyword
@@ -82,21 +94,6 @@ throw new Error('But this is better')
 ```
 
 This is because `Error` has other properties on it like `message` and `stack` which systems may expect.
-
-### `try/catch`
-
-Wrap code that may throw errors:
-
-```javascript
-try {
-  assertLengthGreaterThan4('foo')
-} catch (error) {
-  console.log('The error is handled here')
-}
-// code resumes regular execution here
-```
-
-The catch block stops the propagation of an error.
 
 ### Re-throwing
 

@@ -2,15 +2,15 @@
 
 ### Conditional Statements
 
-~~~ {.javascript}
-if (expression) { then_part; }
+```javascript
+if (condition) { thenPart; }
 
-if (expression) {
-  then_part;
+if (condition) {
+  thenPart;
 } else {
-  else_part;
+  elsePart;
 }
-~~~
+```
 
 ### Chaining Conditionals
 
@@ -20,12 +20,12 @@ if (expression) {
 You can chain `if / else`'s together:
 
 ~~~ {.javascript}
-if (expression) {
-  then_part;
-} else if (expression2) {
-  second_then_part;
+if (condition) {
+  thenPart;
+} else if (condition2) {
+  secondThenPart;
 } else {
-  else_part;
+  elsePart;
 }
 ~~~
 
@@ -34,13 +34,13 @@ if (expression) {
 Nesting is possible:
 
 ~~~ {.javascript}
-if (expression) {
-  then_part;
+if (condition) {
+  thenPart;
 } else {
-  if (expression2) {
-    second_then_part;
+  if (condition2) {
+    secondThenPart;
   } else {
-    else_part;
+    elsePart;
   }
 }
 ~~~
@@ -49,61 +49,49 @@ if (expression) {
 
 ### Switch Statements
 
-Cleaner conditional (using strict equality checking):
+Choose a branch based on strict equality:
 
 ~~~ {.javascript}
 switch (expression) {
   case val1:
-    then_part;
+    thenPart;
     break;
 
   case val2:
-    then_part;
+    thenPart;
     break;
 
   default:
-    else_part;
+    elsePart;
     break;
 }
 ~~~
 
 Don't forget that `break;` statement!
 
-### The Major Looping Statements
+### Flow controls
 
-  * Traditional `for`:
+* `for`:
 
-    ~~~ {.javascript}
-    for (let i = 0; i < 10; i++) { /* body */ }
-    ~~~
+```javascript
+for (let i = 0; i < 10; i++) { /* body */ }
+```
 
-  * Iterating across an array:
+* `while`:
 
-    ```javascript
-    for (let element of array) { /* ... */ }
-    ```
+```javascript
+while (condition) { /* body */ }
+```
 
-  * Iterating across object properties:
+* `do ... while` (VERY uncommon):
 
-    ~~~ {.javascript}
-    for (let prop in object) { /* body */ }
-    ~~~
+```javascript
+do { /* block */ } while (condition)
+```
 
-  * Traditional `while`:
+- Loops can be labeled and exited with `break`.
 
-    ~~~ {.javascript}
-    while (condition) { /* body */ }
-    ~~~
-
-  * Traditional `do ... while` (VERY uncommon):
-
-    ~~~ {.javascript}
-    do { /* block */ } while (condition)
-    ~~~
-
-  - Loops can be labeled and exited with `break`.
-
-  - Use `continue` to skip to the next iteration of the loop.
+- Use `continue` to skip to the next iteration of the loop.
 
 ### `for` vs `while`
 
@@ -115,7 +103,7 @@ Don't forget that `break;` statement!
 
 ### Looping
 
-- Loops can be labeled and exited with `break`.
+- Loops can be exited with `break`.
 
 ```javascript
 for (let i = 1; i < 10; ++i) {
@@ -135,30 +123,28 @@ for (let i = 1; i < 10; ++i) {
 // prints 1, 3, 5, 7, etc.
 ```
 
-### while Loops
+### Run while the condition is true
 
-~~~ {.javascript}
-let i=0;
+```javascript
+let i = 0;
 
-while (i<10) {
-  i++;
+while (i < 10) {
+  console.log(i++);
 }
-~~~
+
+// prints 1, 2, 3, ..., 9
+```
 
 ### The Ternary Conditional Operator
 
-  - Ternary operator:
+Ternary operator lets you evaluate an expression based on a condition:
 
-    ~~~ {.example}
-    const result = condition ? then : else;
-    ~~~
+```javascript
+const result = condition ? thenValue : elseValue;
+// example
+const shirt = isWarm ? "t-shirt" : "sweater";
+```
 
-  - Example:
-
-    ~~~ {.javascript}
-    const shirt = isWarm ? "t-shirt" : "sweater";
-    ~~~
-    
 Unlike `if/else`, ternary operators **evaluate** the value
 and can be assigned.
 
@@ -172,7 +158,7 @@ const foo = cond ? value1 : value2 // allowed
 They can be chained to simulate `if / else if / ... / else`:
 
 ```javascript
-const res = cond1 
+const res = cond1
   ? then1
   : cond2
   ? then2

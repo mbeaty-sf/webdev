@@ -65,7 +65,7 @@ pet // { name: 'Fido' }
 
 ### Property Enumeration
 
-  - The `for...in` loop iterates over an object's properties in an **unspecified** order.
+The `for...in` loop iterates over an object's properties in an **unspecified** order.
 
 ```javascript
 for (let propertyName in object) {
@@ -74,15 +74,7 @@ for (let propertyName in object) {
 }
 ```
 
-- Includes _inherited_ properties, use `obj.hasOwnProperty(propName)` to test
-
-```javascript
-const obj1 = { color: 'red' }
-const obj2 = Object.create(obj1) // inherit from 
-
-obj2.color // 'red'
-obj2.hasOwnProperty('color') // false
-```
+`for...in` has several gotchas, generally avoid it ([link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in#why_use_for...in))
 
 ### Property Enumeration
 
@@ -95,8 +87,6 @@ for (let value of Object.values(obj)) { /* ... */ }
 
 Object.entries(obj) // all [key, value] pairs of the object
 for (let [key, value] of Object.entries(obj)) { /* ... */ }
-
-Object.getOwnPropertyNames(obj) // all properties, incl. non-enumerable
 ```
 
 ### Array vs Object Enumeration

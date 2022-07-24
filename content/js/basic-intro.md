@@ -4,7 +4,7 @@
 
 - It's the language of the web
 - All browsers use JavaScript to create behavior
-- JavaScript is very flexible (almost to a fault)
+- JavaScript is very flexible to a fault ([link](https://github.com/denysdovhan/wtfjs))
 - Can support OOP or FP
 - It's not Java
 

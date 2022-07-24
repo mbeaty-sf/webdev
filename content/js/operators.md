@@ -16,41 +16,46 @@
 
 (Most operators have assignment shortcut versions.)
 
-### What Is `true` and What Is `false`?
+### The truth of the matter
 
-- Things that are `false`:
+- Things that are `false` (falsey):
 
 ```javascript
-false;
-null;
-undefined;
-""; // The empty string
-0;
-NaN;
+Boolean(false);
+Boolean(null);
+Boolean(undefined);
+Boolean("");
+Boolean(0);
+Boolean(NaN);
 ```
 
-- Everything else is `true`, including:
+- Everything else is `true` (truthy), including:
 
 ```javascript
-"0";      // String
-"false";  // String
-[];       // Empty array
-{};       // Empty object
-Infinity; // Yep, it's true
+Boolean(1)   // non-zero number
+Boolean("0") // non-empty string
+Boolean([])  // any array
+Boolean({})  // any object
+Boolean(Infinity)
 ```
 
-### Sloppy Equality
+### Equality
 
-- The traditional equality operators in JS are sloppy
-
-- That is, they do implicit type conversion, checking if they're both "truthy" or "falsey"
+- JS `==` and `!=` are "abstract equality operators", do implicit type conversions
+- They do implicit type versions, very confusing
 
 ```javascript
-"1" == 1;   // true
+Boolean(false) == Boolean(null) // true
+false == null // false
+
 [3] == "3"; // true
 
-0 != "0";  // false
-0 != "";   // false
+"0" == 0;   // true
+0 == "";    // true
+"0" == "";  // false
+
+true == []  // false
+true == ![] // false
 ```
 
 ### Strict Equality

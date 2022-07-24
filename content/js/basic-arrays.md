@@ -46,21 +46,23 @@ Array.isArray(arr) // true
 const arr = [1, 2, 3]
 arr[0] = 'yo'
 arr // ['yo', 2, 3]
+
+// dynamically extends the capacity of the array
 arr[4] = 5
 arr // ['yo', 2, 3, <empty>, 5]
 ```
 
 ### Array operations
 
-- Insert:     `a.push(x)` **or** `a.unshift(x)`
-- Remove:     `a.pop()` **or** `a.shift()`
-- Combine:    `const b = a.concat([4, 5])`
+- Insert:     `a.push(val)` **or** `a.unshift(val)`
+- Remove:     `const val = a.pop()` **or** `const val = a.shift()`
+- Combine:    `const b = a.concat(otherArr)`
 - Extract:    `const b = a.slice(start, end)`
 - Manipulate: `a.splice(start, deleteCount, ...items)`
 - Query:      `a.includes(element) // true/false`
-- Search:     `a.indexOf(element)`
+- Search:     `a.indexOf(element) // -1 if missing, otherwise numIndex`
 - Sort:       `a.sort()`
-- To string:  `a.join(separator)`
+- To string:  `const str = a.join(separator)`
 
 ### Iterating
 
@@ -76,8 +78,27 @@ for (let element of array) {
 }
 ```
 
-### Exercise
+### Comparing arrays
 
+- `===` compares references
+
+```js
+const arr1 = []
+const arr2 = arr1 // same array in memory
+const arr3 = [] // different array in memory
+
+arr1 === arr2 // true
+arr1 === arr3 // false
+```
+
+- No way to compare object contents (exactly)
+- Decent workaround, works in 99% of cases:
+
+```javascript
+JSON.stringify(arr1) === JSON.stringify(arr2)
+```
+
+### Exercise
 
 #. Open `src/www/js/arrays/arrays.js`
 
