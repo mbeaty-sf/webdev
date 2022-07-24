@@ -6,8 +6,15 @@
 
   : Gets/sets HTML markup in an element
 
-~~~ {.javascript insert="../../../src/examples/js/dom.js" token="inner-html"}
-~~~
+```javascript
+document.body.innerHTML = '' +
+  '<ul>' +
+  '  <li>Learn DOM</li>' +
+  '  <li>Practice innerHMTL</li>' +
+  '</ul>'
+
+console.log(document.body.innerHTML)
+```
 
 ### Text
 
@@ -15,8 +22,12 @@
 
   : Gets/sets Human-visible text content
 
-~~~ {.javascript insert="../../../src/examples/js/dom.js" token="inner-text"}
-~~~
+```javascript
+const title = document.getElementById('title')
+console.log(title.innerText) // 'Welcome'
+title.innerText = 'Goodbye'
+console.log(title.innerText) // 'Goodbye'
+```
 
 (`.textContent` also works; it's more performant but less smart)
 
@@ -26,8 +37,12 @@
 
   : Gets/sets form input value
 
-~~~ {.javascript insert="../../../src/examples/js/dom.js" token="form-value"}
-~~~
+```javascript
+const input = document.createElement('input')
+input.value = 'I love tea'
+console.log(input.value) // 'I love tea'
+document.body.appendChild(input)
+```
 
 ### Form Values
 
@@ -67,5 +82,11 @@ Element methods:
 * `.classList.toggle(name)`
 * `.classList.contains(name)`
 
-~~~ {.javascript insert="../../../src/examples/js/dom.js" token="class-toggle"}
-~~~
+```javascript
+const title = document.getElementById('title')
+title.classList.contains('hidden') // false
+title.classList.toggle('hidden')
+title.classList.contains('hidden') // true
+title.classList.toggle('hidden')
+title.classList.contains('hidden') // false
+```

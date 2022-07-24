@@ -20,27 +20,46 @@ Once you have an element, you can append it anywhere.
 
 Adding some text...
 
-~~~ {.javascript insert="../../../src/examples/js/dom.js" token="text"}
-~~~
+```javascript
+const message = document.createElement('p')
+message.appendChild(document.createTextNode('Hello'))
+document.body.appendChild(message)
+```
 
 Adding an image...
 
-~~~ {.javascript insert="../../../src/examples/js/dom.js" token="img"}
-~~~
+```javascript
+const image = document.createElement('img')
+image.src = 'https://www.placecage.com/200/300'
+document.getElementById('root').appendChild(image)
+```
 
 ### Creating New Nodes
 
 Adding children to children for a list...
 
-~~~ {.javascript insert="../../../src/examples/js/dom.js" token="list"}
-~~~
+```javascript
+const list = document.createElement('ul')
+
+const todo1 = document.createElement('li')
+todo1.appendChild(document.createTextNode('Learn DOM'))
+
+list.appendChild(todo1)
+
+document.getElementById('root').appendChild(list)
+```
 
 ### Appending Multiple Times
 
 `appendChild` on existing node *moves* it.
 
-~~~ {.javascript insert="../../../src/examples/js/dom.js" token="re-append"}
-~~~
+```javascript
+const moveToEnd = () => {
+  const list = document.getElementsByTagName('ul')[0]
+  const todo = list.children[0]
+  list.appendChild(todo)
+}
+```
 
 ### Other Manipulations
 

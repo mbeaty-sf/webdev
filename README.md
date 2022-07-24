@@ -140,7 +140,7 @@ $ yarn start
 
 If you're a Windows user, you may also run into other security blocks like Windows Defender, just go ahead and cancel/ignore/permit any warnings.
 
-Then visit <http://localhost:3000/js/>. This will lead you to various interactive pages and test suites that will be used throughout the course.
+Then visit <http://localhost:3000/js/> (the trailing slash matters). This will lead you to various interactive pages and test suites that will be used throughout the course.
 
 Other exercises will have you work with a Jest spec file and maybe an implementation file. In those cases, open one (or both) files for instructions. You can run the tests by running the commands in the prompt from the `/src` folder.
 
@@ -158,7 +158,7 @@ The exercises are under [/projects/rmdb/exercises](/projects/rmdb/exercises). Yo
 
 Each exercise is cumulative, building on the previous one. There is a reference solution provided at the top of each exercise in case you were unable to complete the previous lab.
 
-### Sandbox
+### Sandbox (optional)
 
 There's a JS sandbox under `/sandbox`, with a skeleton JS starter project. Go into that directory and follow the `README.md` to get it running.
 

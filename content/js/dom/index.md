@@ -5,5 +5,5 @@
 <<(traversal.md)
 <<(manipulate.md)
 <<(content.md)
-<<(flags.md)
+<<(exercise.md)
 <<(events.md)
