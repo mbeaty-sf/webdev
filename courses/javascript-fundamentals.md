@@ -52,12 +52,11 @@ This JavaScript course is delivered over two days.
 <<(../content/js/basic-objects.md)
 <<(../content/js/builtin-objects.md)
 <<(../content/js/functional/basics.md)
-<<(../content/js/scope.md)
 <<(../content/js/es-features/syntax.md)
 
 # Functions
 
-<<(../content/js/functional/basics.md)
+<<(../content/js/scope.md)
 <<(../content/js/functional/closures-basics.md)
 <<(../content/js/functional/array.md)
 
