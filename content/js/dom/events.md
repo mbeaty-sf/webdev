@@ -2,7 +2,7 @@
 
 ### Events Overview
 
-* Events can be click, hover, key press, focus, form submit, etc.
+* Events can happen on click, hover, key press, form submission, etc.
 * Events are received in a synchronous "event loop":
   * JS runtime hangs out, quietly waiting for events
   * Events fire and trigger registered handler functions
@@ -14,8 +14,6 @@
 * change
 * keydown
 * submit
-
-(Example: `src/examples/js/events.html`)
 
 ### Slightly More Comprehensive List
 
@@ -46,12 +44,15 @@ button.addEventListener('click', () => {
 })
 ```
 
+(Example: <http://localhost:3000/js/dom/events-demo.html>)
+
 ### Event Bubbling
 
 * Events propagate from the target node upwards
 * Called **bubbling**
 
 ```html
+
 <form onclick="console.log('form')">FORM
   <div onclick="console.log('div')">DIV
     <p onclick="console.log('p')">P</p>
@@ -68,8 +69,9 @@ Clicking `<div>`:    `DIV  FORM`
 * Bubbling can be prevented with `event.stopPropagation`
 
 ```html
+
 <body onclick="console.log('Will not be reached')">
-  <button>Click me</button>
+<button>Click me</button>
 </body>
 ```
 
@@ -88,16 +90,27 @@ We're using `onclick` for terse examples
 
 Generally **only** use `addEventListener`
 
-### Browser Default Action
+### Preventing Default Behavior
 
 * The browser has a default action for many events, e.g.
   * `submit` will `POST` to the `form` `action` url
-  * Clicking a link will load a new page
+  * Clicking an anchor link `<a>` will load a new page
 * Default action prevented with `event.preventDefault`
+
+```javascript
+anchorEl.addEventListener('click', (event) => {
+  event.preventDefault() // will not load the page
+})
+
+formEl.addEventListener('submit', (event) => {
+  event.preventDefault() // will not submit the form and reload
+})
+```
 
 ### Event Delegation
 
 ```html
+
 <ul>
   <li>Option 1</li>
   <li>Option 2</li>
@@ -122,7 +135,7 @@ What happens if another `li` is added dynamically
 
 and then clicked?
 
-(Example: `src/examples/js/events.html`)
+(Example: <http://localhost:3000/js/dom/events-demo.html>)
 
 ### Event Delegation
 
@@ -141,8 +154,13 @@ How can we use this to our advantage?
 
 Put the handler on the parent
 
-~~~ {.javascript insert="../../../src/examples/js/events.js" token="parent-delegation"}
-~~~
+```javascript
+const ul = document.getElementsByTagName('ul')[0]
+ul.addEventListener('click', (e) => {
+  console.log(ul === e.currentTarget) // true
+  console.log(`Clicked ${e.target.innerText}`)
+})
+```
 
 ### Functions Given Context of Event
 
@@ -150,7 +168,7 @@ Event handlers are given context of that element.
 
 ```js
 document.getElementsByTagName('button')
-  .addEventListener('click', function() {
+  .addEventListener('click', function () {
     console.log(this) // the button that was clicked
   })
 ```
@@ -185,10 +203,9 @@ Moral of the story: `this` **can** be more expressive
 
 #. Open the following files in your text editor:
 
-     - `src/www/js/events/events.js`
+    - `src/www/js/dom/events-exercise.js`
+    - `src/www/js/dom/events-exercise.html`
 
-     - `src/www/js/events/index.html` (read only!)
-
-#. Open the `index.html` file in your web browser.
+#. Open <http://localhost:3000/js/dom/events-exercise.html> file in your web browser.
 
 #. Complete the exercise.

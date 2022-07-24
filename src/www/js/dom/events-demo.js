@@ -46,24 +46,20 @@
 
   document.getElementById('add-to-li')
     .addEventListener('click', () => {
-      // <<: multiple-handlers
       Array.from(document.getElementsByTagName('li'))
         .forEach((li, i) => {
           li.addEventListener('click', () => {
             console.log(`Clicked option ${i + 1}`)
           })
         })
-      // :>>
     })
 
   document.getElementById('add-to-parent')
     .addEventListener('click', () => {
-      // <<: parent-delegation
       const ul = document.getElementsByTagName('ul')[0]
       ul.addEventListener('click', (e) => {
         console.log(ul === e.currentTarget) // true
         console.log(`Clicked ${e.target.innerText}`)
       })
-      // :>>
     })
 }

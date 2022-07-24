@@ -26,10 +26,10 @@
     <button id="click-type">Click me</button>
   </p>
   <form action="#" id="submit-type">
-    <label>Text
+    <label>Change (text)
       <input name="text" type="text" id="change-type" />
     </label><br>
-    <label>Checkbox
+    <label>Change (checkbox)
       <input name="checkbox" type="checkbox" id="checked-type" />
     </label><br>
     <label>Keydown
@@ -66,19 +66,14 @@
     <input id="event-limiting" type="text">
   </label>
 
-  <p>
-    Unlimited mirroring:
-    <span id="unlimited"></span>
-  </p>
-  <p>
-    Debounced mirroring:
-    <span id="debounced" />
-  </p>
-  <p>
-    Throttled mirroring:
-    <span id="throttled" />
-  </p>
+  <p style="color: gray;">Unthrottled mirroring:</p>
+  <p><span id="unlimited">&nbsp;</span></p>
+  <p style="color: gray;">Debounced mirroring:</p>
+  <p><span id="debounced">&nbsp;</span></p>
+  <p style="color: gray;">Throttled mirroring:</p>
+  <p><span id="throttled">&nbsp;</span></p>
 </section>
-<script type="module" src="events.js"></script>
+<script type="module" src="events-demo.js"></script>
+<script type="module" src="../browser/throttling.js"></script>
 </body>
 </html>
