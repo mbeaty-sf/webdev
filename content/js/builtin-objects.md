@@ -6,7 +6,6 @@
   - `str.charAt(i)`
   - `str.concat()`
   - `str.indexOf(needle)`
-  - `str.join(separator)`
   - `str.slice(iStart, [iEnd])`
   - `str.split(delimiter)`
   - `str.substring(iStart, [iEnd])`

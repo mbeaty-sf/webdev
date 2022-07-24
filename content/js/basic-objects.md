@@ -102,6 +102,24 @@ for (let [key, value] of Object.entries(obj)) { /* ... */ }
 Object.getOwnPropertyNames(obj) // all properties, incl. non-enumerable
 ```
 
+### Array vs Object Enumeration
+
+`for...of` is for arrays
+
+> Show me each bead OF this string of pearls
+
+```javascript
+for (let element of array) { /* ... */ }
+```
+
+`for...in` is for objects
+
+> Show me each word IN this dictionary
+
+```javascript
+for (let property in object) { /* ... */ }
+```
+
 ### Comparing objects
 
 - `===` compares references

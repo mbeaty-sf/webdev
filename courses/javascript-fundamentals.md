@@ -48,6 +48,7 @@ This JavaScript course is delivered over two days.
 <<(../content/js/values-types.md)
 <<(../content/js/operators.md)
 <<(../content/js/flow-control.md)
+<<(../content/js/basic-arrays.md)
 <<(../content/js/basic-objects.md)
 <<(../content/js/builtin-objects.md)
 <<(../content/js/scope.md)
