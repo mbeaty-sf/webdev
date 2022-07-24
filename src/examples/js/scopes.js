@@ -72,66 +72,6 @@ function foo() {
 }
 // :>>
 
-// <<: scope-challenge
-d = 15
-
-function foo(b) {
-  e = 42
-  function myFn(f) {
-    const c = 2
-    return f + c + b
-  }
-  console.log(c) // ?
-  return myFn
-}
-
-console.log(d) // ?
-console.log(e) // ?
-console.log(foo(2)(4)) // ?
-// :>>
-
-// <<: scope-challenge-answer
-d = 15
-
-function foo(b) {
-  e = 42
-  function myFn(f) {
-    const c = 2
-    return f + c + b
-  }
-  console.log(c) // ReferenceError
-  return myFn
-}
-
-console.log(d) // 15
-console.log(e) // 42
-console.log(foo(2)(4)) // 8
-// :>>
-
-// <<: scope-challenge-2
-d = 15
-function foo() {
-  const c = 10
-  return d === c ? 'error' : 'yay'
-}
-
-console.log(foo()) // ?
-d = 10
-console.log(foo()) // ?
-// :>>
-
-// <<: scope-challenge-2-answer
-d = 15
-function foo() {
-  const c = 10
-  return d === c ? 'error' : 'yay'
-}
-
-console.log(foo()) // 'yay'
-d = 10
-console.log(foo()) // 'error'
-// :>>
-
 // <<: block-scope
 function blockScope() {
   if (Math.random() > 0.5) {
