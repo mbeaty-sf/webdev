@@ -39,7 +39,7 @@ Common methods like `.map` don't exist.
 ```javascript
 const alerts = document.getElementsByClassName('alert')
 console.log(alerts.length) // 4
-alerts.map(() => {}) // Error: map undefined
+alerts.map // undefined
 ```
 
 ### The `NodeList`

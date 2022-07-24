@@ -1,6 +1,6 @@
 ## Document Object Model (DOM)
 
-<<(intro.md)
+<<(basics.md)
 <<(fetch.md)
 <<(traversal.md)
 <<(manipulate.md)

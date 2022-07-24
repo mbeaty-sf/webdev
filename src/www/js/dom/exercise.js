@@ -17,18 +17,6 @@
  * Exercise 2
  * ============================================
  *
- * Add the 3 todos below as <li> elements in the todos list.
- * Use `#innerText` to set the text of the li element.
- */
-
-const todos = ['Learn DOM', 'Practice', 'Profit 💸']
-
-// Your code goes here
-
-/**
- * Exercise 3
- * ============================================
- *
  * Get the form state of the input text (the text in it) and
  * whether the checkbox is checked or not.
  */
@@ -37,11 +25,30 @@ const input = document.querySelector('input[type="text"]')
 const checkbox = document.querySelector('input[type="checkbox"]')
 
 // your code goes here
-const inputVal = null // TODO
-const checkboxVal = null // TODO
+const inputVal = null // TODO your code goes here
+const checkboxVal = null // TODO your code goes here
 
 console.assert(inputVal === 'Hello world', 'input val not determined correctly')
 console.assert(checkboxVal === true, 'checkbox val not determined correctly')
+
+/**
+ * Exercise 3
+ * ============================================
+ *
+ * Implement the addTodo function. It should read from the input field
+ * and add a new todo to the ul element with the `exercise3` id. It then
+ * should clear the input field.
+ *
+ * When the input field is empty and the user tries to add an item,
+ * do nothing.
+ */
+
+const addTodo = (e) => {
+  e.preventDefault()
+
+  // TODO Your code goes here
+
+}
 
 /**
  * Exercise 4
@@ -59,4 +66,4 @@ console.assert(checkboxVal === true, 'checkbox val not determined correctly')
 const container = document.querySelector('#exercise4-container')
 const url = 'https://media4.giphy.com/media/hAvuWZIdxLbNMv6SqI/giphy.gif?cid=ecf05e47k5weoj6jsv0qha1vij4p2k1ej9z3gfe0bw5npcmz&rid=giphy.gif'
 
-// your code goes here
+// TODO your code goes here
