@@ -66,19 +66,9 @@ This JavaScript course is delivered over two days.
 <<(../content/js/oop/classes.md)
 <<(../content/js/oop/classes-exercise.md)
 
-# JavaScript and the Web Browser
-
-<<(../content/js/browser-intro.md)
-<<(../content/html/refresher.md)
-<<(../content/css/refresher.md)
-<<(../content/js/loading.md)
-
-# The Document Object Model
+# JS and the Browser
 
 <<(../content/js/dom/index.md)
-
-# Browser APIs
-
 <<(../content/js/browser/timers.md)
 
 # Forms
