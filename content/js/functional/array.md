@@ -66,9 +66,6 @@ and passes in:
 Which one reads more like English?
 
 ```javascript
-const registerUser = () => {/* ... */}
-const users = [/* ... */]
-
 for (let i = 0; i < users.length; i++) {
   registerUser(users[i])
 }
@@ -159,8 +156,8 @@ A place to store the "rolled up" (or reduced) values of the array.
 
 ```javascript
 const nums = [1, 2, 3]
-let sum = 0
-nums.reduce((_, num) => { sum += num })
+let sum = 0 // this is an "accumulator"
+nums.forEach((num) => { sum += num })
 sum // 6
 ``` 
 
@@ -174,11 +171,12 @@ The function *returns* what will be the next accumulator.
 
 ```javascript
 const nums = [1, 2, 3]
-const sum = nums.reduce((accumulator, num) => { 
-  return accumulator + num // this will be passed as 
-                           // `accumulator` param in
-                           // the next invocation 
+const sum = nums.reduce((accumulator, num) => {
+  // this will be passed as `accumulator` param 
+  // in the next invocation
+  return accumulator + num 
 })
+
 sum // 6
 ``` 
 
@@ -261,5 +259,5 @@ person // { id: 42, name: 'Andrew' }
 
 ```shell
 $ cd src
-$ yarn jest array.test.js --watch
+$ yarn jest functional/array.test.js --watch
 ```

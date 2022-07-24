@@ -26,6 +26,21 @@ Arrow function (MOST COMMON)
     const foo = () => {}
 ```
 
+### Arrow Functions
+
+Without the curly brackets `{}`, the function implicitly returns the expression
+
+```javascript
+const add = (a, b) => {
+  return a + b
+}
+
+// the same as...
+const add = (a, b) => a + b
+```
+
+If you need more than one statement, you need the `{}`'s
+
 ### Function Invocation
 
 Parentheses are mandatory in JavaScript for function invocation. 

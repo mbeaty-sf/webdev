@@ -36,6 +36,36 @@ pet[propName] // 'dog', looking for key "type"
 pet.propName // undefined, looking for key "propName"
 ```
 
+### Dynamic setting
+
+You can use square brackets to pass in a variable that will set the key
+
+```javascript
+const propName = 'type'
+
+const obj = {
+  [propName]: 'dog'
+}
+
+obj.type // 'dog'
+```
+
+### Keys
+
+The keys are always strings, even when you set them with something else.
+
+```javascript
+const obj = {
+  [1]: 'foo',
+  [false]: 'bar',
+  [() => {}]: 'baz'
+}
+
+obj['1'] // 'foo'
+obj['false'] // 'bar'
+obj['() => {}'] // 'baz'
+```
+
 ### Setting values
 
 Dot notation:
