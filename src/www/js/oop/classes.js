@@ -27,25 +27,6 @@ export class TempTracker {}
 
 export class AverageTempTracker {}
 
-/**
- * Create a class `BoundedTempTracker`
- *
- * Implements functionality of `TempTracker`
- *
- * Additionally, it implements:
- *      setTemp: same as before, but it does not set the temp
- *               if it is greater than 100 or less than 0.
- *
- *      getTemp: same as before, but it tracks each time
- *               getTemp has been called
- *
- *      getTempReads: returns how many times `getTemp` has
- *                    been called
- *
- */
-
-export class BoundedTempTracker {}
-
 export class Counter {
   /**
    * Step 1: Rewrite setting the initial state without

@@ -53,44 +53,6 @@ export class AverageTempTracker extends TempTracker {
   }
 }
 
-/**
- * Create a class `BoundedTempTracker`
- *
- * Implements functionality of `TempTracker`
- *
- * Additionally, it implements:
- *      setTemp: same as before, but it does not set the temp
- *               if it is greater than 100 or less than 0.
- *
- *      getTemp: same as before, but it tracks each time
- *               getTemp has been called
- *
- *      getTempReads: returns how many times `getTemp` has
- *                    been called
- *
- */
-
-export class BoundedTempTracker extends TempTracker {
-  constructor() {
-    super()
-    this.reads = 0
-  }
-
-  setTemp(v) {
-    if (v < 0 || v > 100) return
-    super.setTemp(v)
-  }
-
-  getTemp() {
-    this.reads += 1
-    return super.getTemp()
-  }
-
-  getTempReads() {
-    return this.reads
-  }
-}
-
 export class Counter {
   #counter = 1
 

@@ -23,34 +23,12 @@ describe('Classes Exercise', () => {
     })
   })
 
-  describe('BoundedTempTracker', () => {
-    it('should limit setting the temp', () => {
-      const tracker = new BoundedTempTracker()
-      tracker.setTemp(50)
-
-      tracker.setTemp(101)
-      expect(tracker.getTemp()).toEqual(50)
-
-      tracker.setTemp(-1)
-      expect(tracker.getTemp()).toEqual(50)
-    })
-
-    it('should track number of reads', () => {
-      const tracker = new BoundedTempTracker()
-      tracker.setTemp(50)
-
-      expect(tracker.getTempReads()).toEqual(0)
-      tracker.getTemp()
-      tracker.getTemp()
-      tracker.getTemp()
-      expect(tracker.getTempReads()).toEqual(3)
-    })
-  })
-
-  describe('instance and private fields', () => {
+  describe('Counter', () => {
     it('should be able to set instance state without constructor method', () => {
-      const counter = new Counter()
-      expect(counter.tick()).toEqual(1)
+      const counter1 = new Counter()
+      const counter2 = new Counter()
+      expect(counter1.tick()).toEqual(1)
+      expect(counter2.tick()).toEqual(1)
     })
 
     it('should keep the internal state private', () => {
