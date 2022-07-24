@@ -128,23 +128,23 @@ const 1foo // syntax error
 
 ### Numbers
 
-  - All numbers are 64-bit floating point
-  - Keep an eye on [number precision](http://0.30000000000000004.com/):
+- All numbers are 64-bit floating point
+- Keep an eye on number precision ([link](http://0.30000000000000004.com/)):
 
-    ~~~ {.javascript}
-    0.1 + 0.2 == 0.3; // false
-    ~~~
+```javascript
+0.1 + 0.2 == 0.3; // false
+```
 
-  - Special numbers: `NaN` and `Infinity`
+- Only use integers, e.g. money in cents
+- Special large integer type: `BigInt` ([link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt))
+- Use a special data type like BigDecimal ([link](https://github.com/dtrebbien/BigDecimal.js)).
+- 
+- Special numbers: `NaN` and `Infinity`
 
-    ~~~ {.javascript}
-    NaN == NaN; // false
-    1 / 0;      // Infinity
-    ~~~
-
-  - Use a special data type like [Big
-    Decimal](https://github.com/dtrebbien/BigDecimal.js).
-  - Only use integers, e.g. money in cents
+```javascript
+NaN == NaN; // false
+1 / 0;      // Infinity
+```
 
 ### Strings
 
@@ -212,8 +212,7 @@ add(5, 4) // 9
 
 ### Value Coercion
 
-  - JavaScript is weakly typed, can implicitly convert:
-  - Usually unexpected:
+JavaScript is weakly typed, can implicitly convert, usually in unexpected ways:
 
 ```javascript
 8 * null; // 0

@@ -1,12 +1,12 @@
 ## Introduction to JavaScript
 
-### Approaching JavaScript
+### What is JavaScript
 
-  - JavaScript might be an object-oriented language with "Java" in the
-    title, but it's not Java.
-
-  - I find that it's best to approach JavaScript as a functional (yet
-    imperative) language with some object-oriented features.
+- It's the language of the web
+- All browsers use JavaScript to create behavior
+- JavaScript is very flexible (almost to a fault)
+- Can support OOP or FP
+- It's not Java
 
 ### A Little About JavaScript
 
@@ -22,67 +22,48 @@
   - Creator: Brendan Eich
   - Mocha -> LiveScript -> JavaScript
   - Invented in 10 days to power Netscape
-  - Dynamically typed
-  - Interpreted and single threaded
-  - No real relationship to Java
+  - Dynamically typed, interpreted, and single threaded
 
-### Not a General Purpose Language
+### What is JS
 
-  - JavaScript is **not** a general-purpose language
+- JS is not a runtime binary, it's a language specification
+- Each browser implements the JS spec
+- Netscape needed a programming language to manipulate web pages
+- Was not designed to run on backend servers or the terminal
+- e.g. no functions to read/write files
 
-  - There are no functions for reading from or writing to files
+### So how does it run on my terminal
 
-  - I/O is heavily restricted
+- NodeJS is a backend JS runtime environment
+- Basically, it lets you run JS without a browser
+- We will be running JS both in the browser and in Node (when running tests)
 
-### But, It's Not Just for the Browser
+### Syntax basics
 
-  - Outside of the browser there are libraries that help make JavaScript
-    act like a general purpose language.
+- Looks a bit like C, and bit like Java
+- Whitespace and indentation is insignificant
+- Blocks of code wrapped with curlies: `{ ... }`
 
-  - Tools such as Node.js add missing features to JS
+### Semicolons
 
-  - Weigh the pros and cons of using JS outside the browser
+  - Semicolons can be used to terminate expressions
+  - They are optional in JavaScript 99.9% of the time
+  - Tools help you catch the 0.1% of times you need them
 
-### Why JavaScript?
+### Running JavaScript
 
-  - It's the language of the web
-  - Runs in the browser, options to run on server
-  - Easy to learn partially
-  - Harder to learn completely
+- You can run JS directly in your browser
+- Open the "dev tools console" in Chrome:
+  - Command-Option-J on macOS
+  - F12 on Windows and Linux
 
-### JavaScript Syntax Basics
+- Enter the following line of code:
 
-  - Part of the "C" family of languages
-  - Whitespace is insignificant (including indentation)
-  - Blocks of code are wrapped with curly braces: `{ ... }`
+```javascript
+console.log('Hello world')
+```
 
-### A Note About Semicolons
+### Dev Tools Console
 
-  - Semicolons are used to terminate expressions.
-  - They are optional in JavaScript.
-  - Tools will help guide your use of semicolons.
-
-### The Browser's JavaScript Console
-
-  - Open your browser's debugging console:
-    - Command-Option-J on a Mac
-    - F12 on Windows and Linux
-
-  - Enter the following JavaScript:
-
-    ~~~ {.javascript}
-    console.log("Hello World");
-    ~~~
-
-### Simple Console Debugging
-
-  - The browser's "console" is a line interpreter (REPL)
-
-  - All major browsers are converging to the same API for console
-    debugging
-
-  - Can use it to set breakpoints
-
-  - Lets you see scoped variables and context
-
-  - Can set a conditional breakpoint
+- It's a REPL (Read-Eval-Print-Loop)
+- Easy way to run or test JS in the context of the page you're on

@@ -41,11 +41,11 @@ $.ajax('/a')
 
 ### Promise Details
 
-  * Guarantee that callbacks are invoked (no race conditions)
+  * Callbacks guaranteed in order
 
-  * Composable (can be chained together)
+  * Composable (can be chained)
 
-  * Flatten code that would otherwise be deeply nested
+  * Flattens code that would otherwise be deeply nested
 
 ### Visualizing Promises (Composition)
 
