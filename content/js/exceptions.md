@@ -72,6 +72,17 @@ const assertLengthGreaterThan4 = (input) => {
 }
 ```
 
+### `throw` keyword
+
+Technically you can throw _anything_, but you should generally throw an `Error`:
+
+```javascript
+throw 'This technically works'
+throw new Error('But this is better')
+```
+
+This is because `Error` has other properties on it like `message` and `stack` which systems may expect.
+
 ### `try/catch`
 
 Wrap code that may throw errors:

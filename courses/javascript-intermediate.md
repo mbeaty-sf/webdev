@@ -90,6 +90,8 @@ This JavaScript course is delivered over three days.
 # Object-Oriented Programming (Classical)
 
 <<(../content/js/oop/classes.md)
+<<(../content/js/oop/classes-advanced.md)
+<<(../content/js/oop/classes-exercise.md)
 <<(../content/js/oop/reflection.md)
 <<(../content/js/oop/mutable.md)
 

@@ -63,10 +63,8 @@ This JavaScript course is delivered over two days.
 
 # Object-Oriented Programming
 
-<<(../content/js/oop/context.md)
-<<(../content/js/oop/new.md)
-<<(../content/js/functional/this.md)
-<<(../content/js/this.md)
+<<(../content/js/oop/classes.md)
+<<(../content/js/oop/classes-exercise.md)
 
 # JavaScript and the Web Browser
 
