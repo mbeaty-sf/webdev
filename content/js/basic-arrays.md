@@ -75,3 +75,17 @@ for (let element of array) {
   // ...
 }
 ```
+
+### Exercise
+
+
+#. Open `src/www/js/arrays/arrays.js`
+
+#. Follow directions in the code
+
+#. Run tests with:
+
+```shell
+$ cd src # (from root)
+$ npx jest arrays.test.js --watch
+```

@@ -63,8 +63,8 @@ You may hear that JS does **call by sharing**:
 - Primitives (string, number, boolean) are **call by value**
 - Objects (objects, arrays, functions) are **call by reference**
 
-**call by sharing**: basically "copies" the value
-**call by reference**: edits will affect the "original" value
+- **call by sharing**: basically "copies" the value
+- **call by reference**: edits will affect the "original" value
 
 ### Parameter passing
 

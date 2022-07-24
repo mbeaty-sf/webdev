@@ -88,15 +88,12 @@ obj2.hasOwnProperty('color') // false
 
 ```javascript
 Object.keys(obj) // all the keys of the object
-
 for (let key of Object.keys(obj)) { /* ... */ }
 
 Object.values(obj) // all the values of the object
-
 for (let value of Object.values(obj)) { /* ... */ }
 
 Object.entries(obj) // all [key, value] pairs of the object
-
 for (let [key, value] of Object.entries(obj)) { /* ... */ }
 
 Object.getOwnPropertyNames(obj) // all properties, incl. non-enumerable
@@ -108,17 +105,9 @@ Object.getOwnPropertyNames(obj) // all properties, incl. non-enumerable
 
 > Show me each bead OF this string of pearls
 
-```javascript
-for (let element of array) { /* ... */ }
-```
-
 `for...in` is for objects
 
 > Show me each word IN this dictionary
-
-```javascript
-for (let property in object) { /* ... */ }
-```
 
 ### Comparing objects
 

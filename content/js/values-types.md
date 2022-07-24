@@ -119,10 +119,6 @@ const 1foo // syntax error
 
 - Fun fact: all Unicode characters are accepted ([link](https://mathiasbynens.be/notes/javascript-identifiers-es6)):
 
-```javascript
-const ಠ_ಠ = 'cool, but do not do this'
-```
-
 ### `undefined` and `null`
 
   - There are two special values: `null` and `undefined`

@@ -67,12 +67,15 @@ d.toISOString() // '2022-07-23T23:00:23.224Z'
 
 ### The Date Object
 
-  * Generic Methods:
-    - `Date.now()`
-    - `Date.UTC()`
-    - `Date.parse("March 7, 2014") // unreliable`
+Generic Methods:
 
-  * Prototype Methods:
+  - `Date.now()`
+  - `Date.UTC()`
+  - `Date.parse("March 7, 2014") // unreliable`
+
+### Date object
+
+Prototype Methods:
 
 ```javascript
 const d = new Date()
@@ -159,4 +162,18 @@ const regex = /My name is (\w*) and I love (\w*)/
 const match = input.match(regex)
 const name = match[1] // first "capture group" (in parens)
 const topic = match[2] // second "capture group"
+```
+
+### Exercise
+
+
+#. Open `src/www/js/builtins/builtins.js`
+
+#. Follow directions in the code
+
+#. Run tests with:
+
+```shell
+$ cd src # (from root)
+$ npx jest builtins.test.js --watch
 ```

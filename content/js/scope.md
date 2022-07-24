@@ -68,38 +68,11 @@ or **shadow** variables by the same name in outer scopes
 ~~~ {.javascript insert="../../src/examples/js/scopes.js" token="shadowing-answer"}
 ~~~
 
-### Challenge Exercise
-
-~~~ {.javascript insert="../../src/examples/js/scopes.js" token="scope-challenge"}
-~~~
-
-### Challenge Exercise
-
-~~~ {.javascript insert="../../src/examples/js/scopes.js" token="scope-challenge-answer"}
-~~~
-
-### Challenge Exercise 2
-
-~~~ {.javascript insert="../../src/examples/js/scopes.js" token="scope-challenge-2"}
-~~~
-
-### Challenge Exercise 2
-
-~~~ {.javascript insert="../../src/examples/js/scopes.js" token="scope-challenge-2-answer"}
-~~~
-
 ### Block Scope
 
 `const` and `let` variables have **block scoping**.
 
-This basically means any `{ ... }` defines a new scope.
-
-~~~ {.javascript insert="../../src/examples/js/scopes.js" token="block-scope"}
-~~~
-
-### Block Scope
-
-`const` and `let` variables have **block scoping**.
+`var` variables don't have block scoping, and hoist to the top of the nearest function.
 
 This basically means any `{ ... }` defines a new scope.
 
@@ -122,28 +95,40 @@ You can even use just a plain `{ }` to create a scope namespace.
 
 ### Top-Down Code
 
-Does this work?
+You can organize your functions top-down in order of calling.
 
-~~~ {.javascript insert="../../src/examples/js/scopes.js" token="top-down"}
-~~~
+Sub-functions can go below top-level functions.
 
-### Top-Down Code
+```javascript
+const first = () => {
+  second()
+}
 
-Does this work?
+const second = () => {
+  third()
+}
 
-~~~ {.javascript insert="../../src/examples/js/scopes.js" token="top-down-answer"}
-~~~
+const third = () => {
+  console.log('third')
+}
+```
 
-### Top-Down Code
+### Top-Down code
 
-How about this?
+But you must define your top-level function before calling it.
 
-~~~ {.javascript insert="../../src/examples/js/scopes.js" token="top-down-const"}
-~~~
+```javascript
+first() // ReferenceError
 
-### Top-Down Code
+const first = () => { /* ... */ }
 
-How about this?
+first() // okay
+```
 
-~~~ {.javascript insert="../../src/examples/js/scopes.js" token="top-down-const-answer"}
-~~~
+### Exercise
+
+#. Open `src/www/js/scopes/scopes.js`
+
+#. Follow directions in the code
+
+#. (There are no tests associated with this exercise)
