@@ -148,15 +148,15 @@ The return value of each function pipes to the next
 ```javascript
 Promise.resolve(1)
   .then((num) => {
-    console.log(num) // > 1
+    console.log(num) // 1
     return 2
   })
   .then((num) => {
-    console.log(num) // > 2
+    console.log(num) // 2
     return 3
   })
   .then((num) => {
-    console.log(num) // > 3
+    console.log(num) // 3
   })
 ```
 
@@ -189,7 +189,7 @@ Promise.resolve(1)
     throw new Error('Boom')
   })
   .catch((err) => {
-    console.error(err) // > Boom
+    console.error(err) // Boom
   })
 ```
 
@@ -200,9 +200,18 @@ Anything other than `throw`ing inside a `.catch` will proceed to `.then`
 ```javascript
 Promise.reject(1)
   .catch((err) => {
-    console.error(err) // > 1
+    console.error(err) // 1
   })
   .then(() => {
     // goes here
   })
 ```
+
+### Exercise
+
+
+#. Visit <http://localhost:3000/js/async/promises.html>
+
+#. Open `src/www/js/async/promises.js`
+
+#. Follow the instructions there.
