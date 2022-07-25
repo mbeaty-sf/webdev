@@ -65,8 +65,12 @@ console.log('Hello')
 
 ```html
 <p>Live Example</p>
-<button onclick="delayedAlert()">Show an alert box after two seconds</button>
-<button onclick="clearAlert()">Cancel alert before it happens</button>
+<button onclick="delayedAlert()">
+  Show an alert box after two seconds
+</button>
+<button onclick="clearAlert()">
+  Cancel alert before it happens
+</button>
 ```
 
 ```javascript

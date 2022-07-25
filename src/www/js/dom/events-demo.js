@@ -1,7 +1,9 @@
 // section 1
 {
   document.getElementById('click-type')
-    .addEventListener('click', () => { console.log('clicked') })
+    .addEventListener('click', (e) => {
+      console.log('clicked')
+    })
 
   document.getElementById('change-type')
     .addEventListener('change', (e) => {

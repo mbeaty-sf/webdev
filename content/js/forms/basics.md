@@ -2,7 +2,6 @@
 
 ### Forms
 
-* Because what website can exist without one?
 * Contains interactive controls for submitting information
 
 ```javascript
@@ -11,8 +10,7 @@
 </form>
 ```
 
-* Common form elements
-    * Examples?
+Demo at ([link](http://localhost:3000/js/forms/basic-demo/basic.html))
 
 ### Form Inputs
 
@@ -95,6 +93,31 @@ Inside a form:
 ```
 
 Will POST to `/users` with form data
+
+### Always use a form
+
+If you are accepting user input, it should be in a `form`
+
+```html
+<!-- no -->
+<input type="text" name="userName">
+<button onclick="submitForm">Submit</button>
+
+<!-- yes -->
+<form onsubmit="submitForm">
+  <input type="text" name="userName">
+  <button type="submit">Submit</button>
+</form>
+
+```
+
+### Submitting Forms
+
+DO NOT do this:
+
+```html
+
+```
 
 ### Submitting Forms
 
