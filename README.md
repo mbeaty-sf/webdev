@@ -4,9 +4,13 @@ This is the source code and training content for Web Development courses taught 
 
 ## Before you begin
 
-Start by forking and cloning the repo. If you don't clone the repo, then you won't be able to save your work on exercises to your own cloned repo. Choose to not fork at your own risk.
+If you're familiar with git, I recommend forking the repo before cloning, so you can keep track of your work.
 
-<details><summary>Here's guidance on pulling the latest code when I make updates</summary>
+You can also [download a `.zip` of the repo](https://i.imgur.com/muHwvo2.png) if you're not familiar with git.
+
+<details><summary>For people who have worked with git before</summary>
+
+Start by forking and cloning the repo. If you don't clone the repo, then you won't be able to save your work on exercises to your own cloned repo. Choose to not fork at your own risk.
 
 Once you've cloned the repo, set this repo as the `upstream`
 
@@ -120,11 +124,11 @@ You can use your favorite text editor to follow along.
 
 I'm a fan of the [WebStorm](https://www.jetbrains.com/webstorm/) IDE by JetBrains. Free trial, not too expensive, definitely worth the money in my book.
 
-[VS Code](https://code.visualstudio.com/) is the most popular open-source editor. Highly extensible, lots of important people swear by it. 
+[VS Code](https://code.visualstudio.com/) is the most popular open-source editor.
 
 **What should I choose??** 😧
 
-I think WebStorm is hands down way better. But you're welcome to make poor choices in an IDE.
+I think WebStorm is hands down way better.
 
 ### Local JS Environment
 
