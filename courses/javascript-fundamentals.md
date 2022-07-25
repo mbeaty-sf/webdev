@@ -44,6 +44,20 @@ This JavaScript course is delivered over two days.
 
 # JavaScript the Language
 
+## JavaScript Language
+
+### JavaScript Language
+
+- Basic intro
+- Values
+- Operators
+- Flow control
+- Arrays
+- Objects
+- Built-ins
+- Exceptions
+- Functions
+
 <<(../content/js/basic-intro.md)
 <<(../content/js/values-types.md)
 <<(../content/js/operators.md)
@@ -79,6 +93,15 @@ This JavaScript course is delivered over two days.
 <<(../content/js/debugging/debugger.md)
 
 # Asynchronous JavaScript
+
+## Asynchronous JavaScript
+
+### Asynchronous JavaScript
+
+- JS Runtime
+- Promises
+- `async / await` syntax
+- Network calls and REST
 
 <<(../content/js/async/runtime.md)
 <<(../content/js/async/promises.md)

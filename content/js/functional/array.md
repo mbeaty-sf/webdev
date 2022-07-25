@@ -24,11 +24,6 @@ arr.forEach(printIncrementedArg) //  2  3
 
 ### forEach
 
-![](../../../diagrams/js/forEach.dot)\
-<!-- Placeholder -->
-
-### forEach
-
 `Array#forEach` invokes the given *callback* once for each array element
 
 and passes in:
@@ -83,12 +78,15 @@ users.forEach(registerUser)
 
 ### Filter: `#filter`
 
+![](./images/array-filter.png)
+
+### Filter: `#filter`
+
 ```javascript
 [1, 2, 3, 4].filter(n => n > 2)
-```
 
-![](../../../diagrams/js/filter.dot)\
-<!-- Placeholder -->
+// [3, 4]
+```
 
 ### `#filter`
 
@@ -122,12 +120,19 @@ nums.some(num => num > 4) // false
 
 ### Transforming: `#map`
 
+![](./images/array-map.png)
+
+### Transforming: `#map`
+
+![](./images/map.png)
+
+### Transforming: `#map`
+
 ```javascript
 [1, 2, 3, 4].map(n => n + 2)
-```
 
-![](../../../diagrams/js/map.dot)\
-<!-- Placeholder -->
+// [3, 4, 5, 6]
+```
 
 ### `map`
 
@@ -145,6 +150,10 @@ It's like making a reduction out of your array.
 ![](images/reduction.jpg)
 
 Cooking down the contents into something different.
+
+### `reduce`
+
+![](./images/array-reduce.png)
 
 ### `#reduce`
 
@@ -248,6 +257,10 @@ const fromPairs = (pairs) => pairs.reduce((acc, [key, value]) => {
 const person = fromPairs(pairs)
 person // { id: 42, name: 'Andrew' }
 ```
+
+### Summary
+
+![](./images/array-methods.jpeg)
 
 ### Exercise: Arrays and Functional Programming
 
