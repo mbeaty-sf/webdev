@@ -78,13 +78,67 @@ getImage('./image.png')
 - `.then` means "run when successful (**resolved**)"
 - `.catch` means "run when failed (**rejected**)"
 
-- Creating promises is a little try, but here's a simple start:
+- Creating promises is a little tricky, but here's a simple start:
 
 ```javascript
 Promise.resolve(42)
   .then((num) => {
     console.log(num) // > 42
   })
+```
+
+### Network requests
+
+Typically, the server will give a response object that you need to parse.
+
+```javascript
+// fake server call
+const getUsersServerCall = () => Promise.resolve({
+  data: { users: [/* ... */] }
+})
+
+const loadUsers = () => {
+  getUsersServerCall()
+    .then((response) => response.data.users)
+    .then((users) => {
+      // do something with the users, e.g. update the DOM
+    })
+}
+```
+
+When would you want to `return getUsersServerCall()` from `loadUsers`?
+
+### It's promises all the way down
+
+```javascript
+// returns a promise
+const getUsersServerCall = () => { /* ... */ }
+
+const loadUsers = () => {
+  return getUsersServerCall()
+    .then(/* ... */)
+}
+
+const initPage = () => {
+  return loadUsers()
+    .then(/* ... */)
+}
+```
+
+### It gets better, I promise
+
+The key to remember: once a promise, always a promise.
+
+The value can only be "reached" inside a `.then`
+
+```javascript
+getFooPromise() // let's say that's a promise
+getFooPromise().then(/* ... */) // promise
+
+// so this returns a promise
+const otherFn = () => getFooPromise().then(/* ... */)
+
+otherFn().then(/* ... */) // still a promise
 ```
 
 ### Chaining promises

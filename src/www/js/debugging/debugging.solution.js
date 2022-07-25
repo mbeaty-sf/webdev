@@ -47,7 +47,7 @@ document.getElementById('increment').addEventListener('click', (e) => {
  */
 
 const exercise3 = () => {
-  var i = 42
+  let i = 42
 
   for (let i = 0; i < 5; i++) {
     console.log('i', i)

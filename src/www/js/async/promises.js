@@ -1,61 +1,78 @@
-const fakeServerCall = () => {
+/******************************************************************************
+ * EXERCISE 1: Implement the button handler to call `getTodosFakeServer`. When
+ *             the server returns the data, extract the text for each item
+ *             and pass them as an array to `addTodos`, which is a provided
+ *             helper function to add them as li's to the ul element.
+ *             Expected response structure:
+ *
+ *                 [
+ *                   { id: 1, text: '...', done: false },
+ *                   { id: 2, text: '...', done: false },
+ *                   ...
+ *                 ]
+ */
+
+const exercise1 = () => {
+  // TODO your code here, do something with getTodosFakeServer
+  getTodosFakeServer()
+}
+
+const addTodos = (todoStrings) => {
+  const list = document.getElementById('exercise1-todos')
+  todoStrings.forEach((text) => {
+    const todo = document.createElement('li')
+    todo.appendChild(document.createTextNode(text))
+    list.appendChild(todo)
+  })
+}
+
+/******************************************************************************
+ * EXERCISE 2: Call `getTodosFailedFakeServer`, which simulates a server error.
+ *             When an error is encountered, update the span#exercise2-error
+ *             with an error message from the server.
+ *
+ *             Expected response:
+ *
+ *                 { error: '...' }
+ */
+function exercise2() {
+
+  // TODO: You code here
+  getTodosFailedFakeServer()
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/******************************************************************************
+ * This is helper code below, you can ignore it.
+ */
+
+const getTodosFakeServer = () => {
   return new Promise((res, rej) => {
     setTimeout(() => {
-      res('ok')
+      res([
+        { id: 1, text: 'Foo', done: false },
+        { id: 2, text: 'Bar', done: false },
+        { id: 3, text: 'Baz', done: false },
+      ])
     }, 500)
   })
 }
 
-const fakeFailedServerCall = () => {
+const getTodosFailedFakeServer = () => {
   return new Promise((res, rej) => {
     setTimeout(() => {
-      rej('kaboom')
+      rej({ error: 'Server unavailable, try again later.' })
     }, 500)
   })
 }
 
-/**
- * Exercise 1
- * ============================================
- *
- * Wait for the server response and store it in the variable
- * `serverRes`.
- */
-
-fakeServerCall()
-  .then(() => {}) // TODO, return server response data
-  .then((serverRes) => {
-    console.assert(serverRes === 'ok', 'Exercise 1: server response not correct')
-  })
-
-/**
- * Exercise 2
- * ============================================
- *
- * Catch a failed server response and store it in a variable.
- */
-
-fakeFailedServerCall()
-  // TODO catch server response failure
-  .then((serverFailure) => {
-    console.assert(serverFailure === 'kaboom', 'Exercise 2: failure not caught')
-  })
-
-/**
- * Exercise 3
- * ============================================
- *
- * Use async/await and Promise.all to wait for two server responses.
- */
-
-const exercise3 = () => {
-  const call1 = fakeServerCall()
-  const call2 = fakeServerCall()
-
-  const [res1, res2] = null // TODO
-
-  console.assert(res1 === 'ok', 'Exercise 3: first response incorrect')
-  console.assert(res2 === 'ok', 'Exercise 3: second response incorrect')
-}
-
-exercise3()
