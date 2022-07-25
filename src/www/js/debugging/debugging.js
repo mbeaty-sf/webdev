@@ -2,7 +2,11 @@
  * Exercise 1
  * ============================================
  *
- * Set a `debugger` statement to investigate the source of the bug in your DevTools.
+ * Set a `debugger` statement inside the `setTimeout` function to investigate
+ * the source of the bug in your DevTools.
+ *
+ * Hint: refer to the "Timers" slides again, on the slide "this darn problem strikes again"
+ * if you're not clear what's going wrong.
  */
 
 const person = {
@@ -22,10 +26,8 @@ person.sayName()
  * Exercise 2
  * ============================================
  *
- * Something is weird with the click listener, it's not updating the click count on the button.
- * Use the Chrome DevTools to set a breakpoint on click events and investigate the issue.
- *
- * BONUS: also inspect the click listeners on the button, and check their current target.
+ * Something is weird with the click listener, it's not updating the click count on the button
+ * correctly. Use the Chrome DevTools to set a breakpoint on click events and investigate the issue.
  */
 
 document.addEventListener('click', (e) => {
@@ -43,7 +45,8 @@ document.addEventListener('click', (e) => {
  *   2. Webstorm
  *
  * Once that's done, set up a breakpoint to investigate the bug, and fix it.
- * Bonus points if you can fix it without changing variable names.
+ *
+ * Hint: https://stackoverflow.com/a/750506/2672869
  */
 
 const exercise3 = () => {

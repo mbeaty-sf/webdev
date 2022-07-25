@@ -30,6 +30,8 @@ You can look at the handlers on a specific element:
 
 Or with `getEventListeners(element)`
 
+Try it out at 
+
 ### DevTools
 
 See what events are happening for an element:
@@ -77,7 +79,7 @@ We'll use **launch** because starting up Chrome with debugger is tedious.
 
 ### VS Code Debugger
 
-- **url**: the URL to open in debugger
+- **url**: the URL to open in debugger (`http://localhost:3000/js/`)
 - **webRoot**: how to map URLs from browser to files on disk
   - e.g. be able to locate `http://localhost:3000/someFolder/foo.js`
   - in our case, served from `${workspaceFolder}/src/www`
@@ -86,9 +88,9 @@ We'll use **launch** because starting up Chrome with debugger is tedious.
 
 ### Resources
 
+- Navigate to <http://localhost:3000/js/dom/events-demo.html> in the Chrome window that popped up
+- Open `src/www/js/dom/events-demo.js` and add a breakpoint on line 5 in the button click listener
 - Tutorial ([link](https://www.digitalocean.com/community/tutorials/how-to-debug-javascript-with-google-chrome-devtools-and-visual-studio-code))
-
-### Demo
 
 ### Webstorm Debugger
 
@@ -104,7 +106,7 @@ Set up a new debug run configuration
 
 ### Webstorm Debugger
 
-Provide the URL of your app
+Provide the URL of your app: `http://localhost:3000/js/`
 
 ![](./images/webstorm-setup3.jpg)
 
@@ -114,6 +116,8 @@ Provide the URL of your app
 
 ### Webstorm Debugger
 
+- Navigate to <http://localhost:3000/js/dom/events-demo.html> in the Chrome window that popped up
+- Open `src/www/js/dom/events-demo.js` and add a breakpoint on line 5 in the button click listener
 - Tutorial ([link](https://www.jetbrains.com/help/webstorm/debugging-javascript-in-chrome.html#debugging_js_on_built_in_server_example))
 
 ### Resources
