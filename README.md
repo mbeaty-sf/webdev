@@ -6,6 +6,8 @@ This is the source code and training content for Web Development courses taught 
 
 Start by forking and cloning the repo. If you don't clone the repo, then you won't be able to save your work on exercises to your own cloned repo. Choose to not fork at your own risk.
 
+<details><summary>Here's guidance on pulling the latest code when I make updates</summary>
+
 Once you've cloned the repo, set this repo as the `upstream`
 
 ```
@@ -24,6 +26,8 @@ You're encouraged to work on a branch during the course, so you can easily re-pl
 ```
 $ bin/branchupdate
 ``` 
+
+</details>
 
 ## Setup
 
@@ -53,7 +57,7 @@ Note the output: `nvm` will automatically update one of your profile files in yo
 
 ```shell
 $ nvm --version
-0.37.2
+0.39.1 # or something higher
 
 $ echo $NVM_DIR
 /some/path/to/.nvm
@@ -63,14 +67,10 @@ $ echo $NVM_DIR
 
 ### Node.js
 
-Now you can download a recent version of Node.js. As of this writing, it's `12.13.0` (Erbium). Node.js goes through lots of iterations, but it releases Long-Term Support (LTS) versions that are promised to be stable and maintained for a long time. The easiest way to get a version:
+Now you can download a recent version of Node.js. Node.js goes through lots of iterations, but it releases Long-Term Support (LTS) versions that are promised to be stable and maintained for a long time. The easiest way to get a version:
 
 ```shell
-$ nvm install 12
-
-or...
-
-$ nvm install lts/erbium
+$ nvm install 14
 ``` 
 
 Use `$ nvm ls` to look at all the LTS Node.js versions.
@@ -83,15 +83,25 @@ It comes with your Node.js install. Verify the installation with:
 $ npm --version
 ```
 
-**NB: Avoid `sudo` with `npm`**: If you ever install packages with `npm` and you are prompted to use `sudo`, something has gone wrong. Don't do it, as it will all end in tears and your system can get very messed up.
+**NB: Avoid `sudo` with `npm`**: If you ever install packages with `npm` and you are prompted to use `sudo`, something has gone wrong. Don't do it, as it will all end in tears and your system can get very messed up. Ask for help.
 
 ### `yarn`
 
-`npm` is nice and all, but `yarn` (a competitor to `npm`) is better. If you're on Windows, you can use the yarn installer from their website. If you're on Mac/Linux, you can do this command from the CLI:
+`npm` is nice and all, but `yarn` (a competitor to `npm`) is better. Install it this way:
 
 ```bash
-$ curl -o- -L https://yarnpkg.com/install.sh | bash
+$ npm install --global yarn
+$ yarn -v
 ```
+
+### Install local dependencies
+
+```bash
+$ cd src
+$ yarn
+```
+
+Now you have all the dependencies!
 
 ### React DevTools
 
@@ -110,13 +120,13 @@ I'm am fan of the [WebStorm](https://www.jetbrains.com/webstorm/) IDE by JetBrai
 
 **What should I choose??** 😧
 
-Try both, see what you like more. I live by the features offered by an IDE, but maybe you won't, or will hate their UX. Every person is different. For this course, I will be demoing code in an IDE.
+I think WebStorm is hands down way better. But you're welcome to make poor choices in an IDE.
 
 ### Local JS Environment
 
 You can always open a console in Firefox or Chrome and get to a JS REPL.
 
-Buuuut there's a cool app now called [RunJS](https://runjs.dev/) that allows you to write and evaluate JS in a much more satisfying way. I'll be using this as a scratchpad for demonstrations from time to time. (Firefox also has a scratchpad feature, I just never got into it.)  
+There's an app called [RunJS](https://runjs.dev/) that allows you to write and evaluate JS, which I'll be using a lot of demonstrations.
 
 ## Folder Structure
 
@@ -134,7 +144,6 @@ Start by installing our dependencies:
 
 ```shell
 $ cd src
-$ yarn
 $ yarn start
 ```
 
