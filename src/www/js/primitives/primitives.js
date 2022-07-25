@@ -15,6 +15,8 @@ export function exercise1() {
 export function exercise2() {
 
   // TODO: Your code here.
+ let i = "hello"
+ return i
 
 }
 
@@ -25,8 +27,10 @@ export function exercise2() {
 export function exercise3() {
 
   // TODO: You code here
-
+return null;
+  
 }
+
 
 
 /******************************************************************************
@@ -39,5 +43,5 @@ export function exercise4() {
   const money2 = 0.20 // $0.20
 
   // return the two amounts added together, in cents
-  return (money1 + money2) * 100 // $0.30 => ¢30
+  return (money1 + money2) // $0.30 => ¢30
 }
