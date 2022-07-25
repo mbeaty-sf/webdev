@@ -37,11 +37,22 @@ We're going to walk through installation of the following:
 - Node.js
 - yarn
 
+You can check if you already have what you need:
+
+```bash
+$ node -v
+# should be >= 14
+$ npm -v
+# should be >= 7
+$ yarn -v
+# should be >= 1.22
+```
+
 If you already have these installed, then skip ahead.
 
 ### `nvm`
 
-**This is for macOS and Linux only. Windows users can just go to nodejs.org and install there.**
+**This is for macOS and Linux only. Windows users can just go to [nodejs.org](https://nodejs.org) and install there.**
 
 You can install a single version of Node.js, but the more common practice is to install [`nvm` (Node Version Manager)](https://github.com/nvm-sh/nvm), which allows you manage multiple versions of node on the same system.
 
@@ -103,18 +114,11 @@ $ yarn
 
 Now you have all the dependencies!
 
-### React DevTools
-
-We'll install an extension that makes it easier to debug React apps.
-
-* [Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
-* [Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
-
 ### Text Editor
 
 You can use your favorite text editor to follow along.
 
-I'm am fan of the [WebStorm](https://www.jetbrains.com/webstorm/) IDE by JetBrains. Free trial, not too expensive, definitely worth the money in my book.
+I'm a fan of the [WebStorm](https://www.jetbrains.com/webstorm/) IDE by JetBrains. Free trial, not too expensive, definitely worth the money in my book.
 
 [VS Code](https://code.visualstudio.com/) is the most popular open-source editor. Highly extensible, lots of important people swear by it. 
 
@@ -128,6 +132,13 @@ You can always open a console in Firefox or Chrome and get to a JS REPL.
 
 There's an app called [RunJS](https://runjs.dev/) that allows you to write and evaluate JS, which I'll be using a lot of demonstrations.
 
+### React DevTools (for React class only)
+
+We'll install an extension that makes it easier to debug React apps.
+
+* [Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
+* [Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
+
 ## Folder Structure
 
 ### Slides
@@ -138,20 +149,18 @@ Follow along using the links in `/slides` to view the latest version of the slid
 
 ### Exercises
 
-Most of the action lives inside `/src`, that's where you'll be doing most of your exercises.
-
-Start by installing our dependencies:
+Most of the action lives inside `/src`, that's where you'll be doing most of your exercises. There's a webserver you'll want to run.
 
 ```shell
 $ cd src
 $ yarn start
 ```
 
-If you're a Windows user, you may also run into other security blocks like Windows Defender, just go ahead and cancel/ignore/permit any warnings.
+> If you're a Windows user, you may also run into other security blocks like Windows Defender, just go ahead and cancel/ignore/permit any warnings.
 
 Then visit <http://localhost:3000/js/> (the trailing slash matters). This will lead you to various interactive pages and test suites that will be used throughout the course.
 
-Other exercises will have you work with a Jest spec file and maybe an implementation file. In those cases, open one (or both) files for instructions. You can run the tests by running the commands in the prompt from the `/src` folder.
+Other exercises will have you work with tests. In those cases, open one (or both) files for instructions. You can run the tests by running the commands in the prompt from the `/src` folder.
 
 ### For React class
 
